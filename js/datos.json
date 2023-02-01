@@ -134,5 +134,53 @@
                 }
             ],
             "img":"img/t-dibu-perr.jpg"
+        },
+        {
+            "id":"09",
+            "nombre":"Batidos de frutas",
+            "precio":"3",
+            "categoria":"bebidos",
+            "ingredientes":[
+                {
+                    "01":"leche",
+                    "02":"cereal opcional",
+                    "03":"queso",
+                    "04":[
+                        {
+                            "1":"mora", 
+                            "2":"kiwi", 
+                            "3":"fresa"
+                        }
+                    ]
+                }
+            ],
+            "img":"img/b-frutas.jpg"
+        },
+        {
+            "id":"10",
+            "nombre":"Bol de frutas con avena",
+            "precio":"2.5",
+            "categoria":"bol",
+            "ingredientes":[
+                {
+                    "01":"avena",
+                    "02":"arandano",
+                    "03":"platano",
+                    "04":"fresa"
+                }
+            ],
+            "img":"img/bol-avena.jpg"
+        },
+        {
+            "id":"11",
+            "nombre":"Cafe",
+            "precio":"1",
+            "categoria":"bebida",
+            "ingredientes":[
+                {
+                    "01":"cafe es demaquina men"
+                }
+            ],
+            "img":"img/cafe.jpg"
         }
     ]
