@@ -1,0 +1,32 @@
+const salida = document.querySelector('#salida');
+const microfono = document.querySelector('#microfono');
+
+microfono.addEventListener('click', ejecutarSpeechAPI);
+
+function ejecutarSpeechAPI() {
+//crear el objeto Speech Recognition
+const SpeechRecognition =  webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+
+// comienza el reconocimiento
+recognition.start();
+
+// Detecta cuando empieza a hablar(start) y muestra Escuchando...
+recognition.onstart = function() {
+    salida.innerHTML = "Escuchando...";
+};
+// Detecta cuando deja de hablar (speechend) y para el reconocimiento(stop())  
+recognition.onspeechend = function() {
+    salida.innerHTML = "Se detuvo de ejecutar";
+    recognition.stop();
+};
+
+//Se ejecuta cuando obtiene los resultados del reconocimiento
+recognition.onresult = function(e) {
+    console.log(e.results);
+    var transcript = e.results[0][0].transcript;
+    var confidence = e.results[0][0].confidence;
+
+    document.getElementById("busqueda").value=transcript;
+};
+}
