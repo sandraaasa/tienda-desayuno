@@ -6,17 +6,16 @@
             "precio":"3.5",
             "categoria":"tostada",
             "ingredientes":[
-                {
-                    "01":"pan",
-                    "02":"mantequilla",
-                    "03":"fresas",
-                    "04":"frrutas rojas",
-                    "05":"esencia de vainilla ",
-                    "06":"canela molida",
-                    "07":"azucar",
-                    "08":"leche entera",
-                    "09":"sirope de arce"
-                }
+                    "pan",
+                    "mantequilla",
+                    "fresas",
+                    "frrutas rojas",
+                    "esencia de vainilla ",
+                    "canela molida",
+                    "azucar",
+                    "leche entera",
+                    "sirope de arce"
+                
             ],
             "img":"img/t-francesa.jpg"
         },
@@ -26,13 +25,11 @@
             "precio":"3.5",
             "categoria":"tostada",
             "ingredientes":[
-                {
-                    "01":"pan",
-                    "02":"mantequilla vegana",
-                    "03":"rucula",
-                    "04":"aguacate",
-                    "05":"azucar"
-                }
+                    "pan",
+                    "mantequilla vegana",
+                    "rucula",
+                    "aguacate",
+                    "azucar"
             ],
             "img":"img/t-vegana.jpg"
         },
@@ -42,20 +39,18 @@
             "precio":"1.5",
             "categoria":"tostada",
             "ingredientes":[
-                {
-                    "01":"pan",
-                    "02":"mantequilla",
-                    "03":"queso",
-                    "04":"azucar",
-                    "05":[
-                        {
-                            "1":"mermelada fresa", 
-                            "2":"mermelada melocoton", 
-                            "3":"mermelada mora", 
-                            "4":"mermelada frambuesa"
-                        }
+                    "pan",
+                    "mantequilla",
+                    "queso",
+                    "azucar",
+                    [
+                        "mermelada fresa", 
+                        "mermelada melocoton", 
+                        "mermelada mora", 
+                        "mermelada frambuesa"
+                        
                     ]
-                }
+                
             ],
             "img":"img/t-mermelada.jpg"
         },
@@ -65,12 +60,11 @@
             "precio":"2.5",
             "categoria":"tostada",
             "ingredientes":[
-                {
-                    "01":"pan",
-                    "02":"hummus",
-                    "03":"rucula",
-                    "04":"tomate"
-                }
+                    "pan",
+                    "hummus",
+                    "rucula",
+                    "tomate"
+                
             ]
         },
         {
@@ -79,13 +73,13 @@
             "precio":"0.5",
             "categoria":"bolleria",
             "ingredientes":[
-                {
-                    "01":"levadura",
-                    "02":"harina",
-                    "03":"azucar",
-                    "04":"mantequilla",
-                    "07":"sal"
-                }
+                
+                "levadura",
+                "harina",
+                "azucar",
+                "mantequilla",
+                "sal"
+                
             ],
             "img":"img/croissant.jpg"
         },
@@ -95,13 +89,12 @@
             "precio":"1",
             "categoria":"bolleria",
             "ingredientes":[
-                {
-                    "01":"levadura",
-                    "02":"harina",
-                    "03":"azucar",
-                    "04":"mantequilla",
-                    "07":"sal"
-                }
+                "levadura",
+                "harina",
+                "azucar",
+                "mantequilla",
+                "sal"
+                
             ],
             "img":"img/croissant.jpg"
         },
@@ -111,12 +104,10 @@
             "precio":"1",
             "categoria":"snack",
             "ingredientes":[
-                {
-                    "01":"hummus",
-                    "02":"semillas",
-                    "03":"snack",
-                    "04":"batido a elegir"
-                }
+                "hummus",
+                "semillas",
+                "snack",
+                "batido a elegir"
             ],
             "img":"img/snk-hummus.jpg"
         },
@@ -126,12 +117,11 @@
             "precio":"3.5",
             "categoria":"tostada",
             "ingredientes":[
-                {
-                    "01":"pan",
-                    "02":"mantequilla",
-                    "03":"topping",
-                    "05":"azucar"
-                }
+                "pan",
+                "mantequilla",
+                "topping",
+                "azucar"
+                
             ],
             "img":"img/t-dibu-perr.jpg"
         },
@@ -141,18 +131,14 @@
             "precio":"3",
             "categoria":"bebidos",
             "ingredientes":[
-                {
-                    "01":"leche",
-                    "02":"cereal opcional",
-                    "03":"queso",
-                    "04":[
-                        {
-                            "1":"mora", 
-                            "2":"kiwi", 
-                            "3":"fresa"
-                        }
-                    ]
-                }
+                "leche",
+                "cereal opcional",
+                "queso",
+                [
+                    "mora", 
+                    "kiwi", 
+                    "fresa"
+                ]
             ],
             "img":"img/b-frutas.jpg"
         },
@@ -162,12 +148,11 @@
             "precio":"2.5",
             "categoria":"bol",
             "ingredientes":[
-                {
-                    "01":"avena",
-                    "02":"arandano",
-                    "03":"platano",
-                    "04":"fresa"
-                }
+                "avena",
+                "arandano",
+                "platano",
+                "fresa"
+                
             ],
             "img":"img/bol-avena.jpg"
         },
@@ -177,9 +162,8 @@
             "precio":"1",
             "categoria":"bebida",
             "ingredientes":[
-                {
-                    "01":"el cafe es de maquina men y nespresso y todo"
-                }
+                "el cafe es de maquina men y nespresso y todo"
+                
             ],
             "img":"img/cafe.jpg"
         }

@@ -1,5 +1,7 @@
-window.onload=function () {
+window.onload= async function () {
     const fav = document.getElementsByClassName("fav");
+    
+    await cargar();
     for (let i = 0; i < fav.length; i++) {
         fav[i].addEventListener("click", ()=>{
             if (fav[i].firstElementChild.src.includes("fill")) {
@@ -21,7 +23,6 @@ window.onload=function () {
             
         });
     }
-    cargar();
 
 }
 function cargar() {
@@ -34,27 +35,46 @@ function cargarJSON( json ) {
     let content = document.getElementById("contenedor");
     
     for (let i = 0; i < json.length; i++) {
-        content.innerHTML+='<div class="col">'
-                           + '<div class="card shadow-sm">';
-        content.innerHTML+='<img src="../'+json[i].img+'" alt="'+json[i].id+'" width="100%" >';
-        content.innerHTML+='<div class="card-body">'
-                            +'<h5 class="card-tittle">Ingredientes</h5>'
-                            +'<div class="card-text">'
-                            +'<ul>';
-        for (let j = 0; j < json[i].ingredientes.length; j++) {
-            content.innerHTML+="<li>"+json[i].ingredientes[j]+"</li>";
-        }
-        content.innerHTML+='</ul> </div>'
-                            +'<div class="d-flex justify-content-between align-items-center">'
-                                +'<div class="btn-group">'
-                                    +'<button type="button" class="btn btn-sm btn-outline-secondary fav"><img src="../img/svg/heart.svg" alt="fav"></button>'
-                                    +'<button type="button" class="btn btn-sm btn-outline-secondary buy"> <img src="../img/svg/bag-plus.svg" alt="buy"></button>'
-                                +'</div>'
-                            +'</div>'
-                            +'</div></div></div>';
-
-
         
         
+        content.innerHTML+="<div class='col'>"
+                                +"<div class='card shadow-sm'>"
+                                    +"<h3 class='card-header'>"+json[i].nombre+"</h3>"
+                                    +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' width='100%' >"
+                                        +"<div class='card-body'>"
+                                            +"<h5 class='card-title'>Ingredientes</h5>"
+                                            +"<div class='card-text'>"
+                                                +"<ul id='ing'>"+listaIngr(json[i])+"</ul>"
+                                            +"</div>"
+                                            +"<div class='d-flex justify-content-between align-items-center'>"
+                                                +"<div class='btn-group'>"
+                                                    +"<button type='button' class='btn btn-sm btn-outline-secondary fav'><img src='../img/svg/heart.svg' alt='fav'></button>"
+                                                    +"<button type='button' class='btn btn-sm btn-outline-secondary buy'> <img src='../img/svg/bag-plus.svg' alt='buy'></button>"
+                                                +"</div>"
+                                            +"</div>"
+                                        +"</div>"
+                                +"</div>"
+                            +"</div>";
     }
+}
+
+function listaIngr(json) {
+    let ing="";
+    
+        const nombres= Object.values(json.ingredientes);
+        for (let j = 0; j < json.ingredientes.length; j++) {
+            
+            if (Array.isArray(json.ingredientes[j])==true) {
+                ing+="<li>opciones <ul>";
+                for (let i = 0; i < json.ingredientes[j].length; i++) {
+                    ing+="<li>"+json.ingredientes[j][i]+"</li>";
+                }
+                ing+="</ul></li>";
+            }else{
+                ing+="<li>"+json.ingredientes[j]+"</li>";
+            }
+            
+        }
+        
+    return ing;
 }
