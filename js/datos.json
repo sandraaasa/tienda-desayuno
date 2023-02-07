@@ -46,15 +46,15 @@
                     "01":"pan",
                     "02":"mantequilla",
                     "03":"queso",
-                    "04":[
+                    "04":"azucar",
+                    "05":[
                         {
                             "1":"mermelada fresa", 
                             "2":"mermelada melocoton", 
                             "3":"mermelada mora", 
                             "4":"mermelada frambuesa"
                         }
-                    ],
-                    "05":"azucar"
+                    ]
                 }
             ],
             "img":"img/t-mermelada.jpg"
@@ -178,7 +178,7 @@
             "categoria":"bebida",
             "ingredientes":[
                 {
-                    "01":"cafe es demaquina men"
+                    "01":"el cafe es de maquina men y nespresso y todo"
                 }
             ],
             "img":"img/cafe.jpg"
