@@ -1,0 +1,171 @@
+[
+    
+        {
+            "id":"01",
+            "nombre":"Tostadas francesas",
+            "precio":"3.5",
+            "categoria":"tostada",
+            "ingredientes":[
+                    "pan",
+                    "mantequilla",
+                    "fresas",
+                    "frrutas rojas",
+                    "esencia de vainilla ",
+                    "canela molida",
+                    "azucar",
+                    "leche entera",
+                    "sirope de arce"
+                
+            ],
+            "img":"img/t-francesa.jpg"
+        },
+        {
+            "id":"02",
+            "nombre":"Tostadas vegana",
+            "precio":"3.5",
+            "categoria":"tostada",
+            "ingredientes":[
+                    "pan",
+                    "mantequilla vegana",
+                    "rucula",
+                    "aguacate",
+                    "azucar"
+            ],
+            "img":"img/t-vegana.jpg"
+        },
+        {
+            "id":"03",
+            "nombre":"Tostadas mermelada",
+            "precio":"1.5",
+            "categoria":"tostada",
+            "ingredientes":[
+                    "pan",
+                    "mantequilla",
+                    "queso",
+                    "azucar",
+                    [
+                        "mermelada fresa", 
+                        "mermelada melocoton", 
+                        "mermelada mora", 
+                        "mermelada frambuesa"
+                        
+                    ]
+                
+            ],
+            "img":"img/t-mermelada.jpg"
+        },
+        {
+            "id":"04",
+            "nombre":"Tostadas hummus",
+            "precio":"2.5",
+            "categoria":"tostada",
+            "ingredientes":[
+                    "pan",
+                    "hummus",
+                    "rucula",
+                    "tomate"
+                
+            ],
+            "img":"img/donut.jpg"
+        },
+        {
+            "id":"05",
+            "nombre":"croissant",
+            "precio":"0.5",
+            "categoria":"bolleria",
+            "ingredientes":[
+                
+                "levadura",
+                "harina",
+                "azucar",
+                "mantequilla",
+                "sal"
+                
+            ],
+            "img":"img/croissant.jpg"
+        },
+        {
+            "id":"06",
+            "nombre":"donut",
+            "precio":"1",
+            "categoria":"bolleria",
+            "ingredientes":[
+                "levadura",
+                "harina",
+                "azucar",
+                "mantequilla",
+                "sal"
+                
+            ],
+            "img":"img/croissant.jpg"
+        },
+        {
+            "id":"07",
+            "nombre":"hummus",
+            "precio":"1",
+            "categoria":"snack",
+            "ingredientes":[
+                "hummus",
+                "semillas",
+                "snack",
+                "batido a elegir"
+            ],
+            "img":"img/snk-hummus.jpg"
+        },
+        {
+            "id":"08",
+            "nombre":"Tostadas dibujos",
+            "precio":"3.5",
+            "categoria":"tostada",
+            "ingredientes":[
+                "pan",
+                "mantequilla",
+                "topping",
+                "azucar"
+                
+            ],
+            "img":"img/t-dibu-perr.jpg"
+        },
+        {
+            "id":"09",
+            "nombre":"Batidos de frutas",
+            "precio":"3",
+            "categoria":"bebidos",
+            "ingredientes":[
+                "leche",
+                "cereal opcional",
+                "queso",
+                [
+                    "mora", 
+                    "kiwi", 
+                    "fresa"
+                ]
+            ],
+            "img":"img/b-frutas.jpg"
+        },
+        {
+            "id":"10",
+            "nombre":"Bol de frutas con avena",
+            "precio":"2.5",
+            "categoria":"bol",
+            "ingredientes":[
+                "avena",
+                "arandano",
+                "platano",
+                "fresa"
+                
+            ],
+            "img":"img/bol-avena.jpg"
+        },
+        {
+            "id":"11",
+            "nombre":"Cafe",
+            "precio":"1",
+            "categoria":"bebida",
+            "ingredientes":[
+                "el cafe es de maquina men y nespresso y todo"
+                
+            ],
+            "img":"img/cafe.jpg"
+        }
+    ]
