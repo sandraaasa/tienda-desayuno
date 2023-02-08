@@ -57,7 +57,6 @@
                 <span class="navbar-text">
     
                     <!-- BUSQUEDA Y VOZ -->
-                    <div>
                         <form class="d-flex justify-content-end mt-3">
                             <div class="collapse collapse-horizontal " id="collapseExample" role="search">
                                 <input id="busqueda" class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
@@ -72,17 +71,18 @@
                             </button>
                                
                             <div class="btn-group">
-                                <button type="button" class="btn btn-danger">Action</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button id="inises" type="button" class="btn bd-color-3" data-bs-toggle="modal" data-bs-target="#inicioSesion">
+                                    <img  src="./img/svg/person.svg" alt="inicioSes">
+                                </button>
+                                <button type="button" class="btn bd-color-3 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
                                 
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#inicioSesion">Inicio sesion</a></li>
+                                    <li><a class="dropdown-item" href="./html/regi.html">Registrarse</a></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                    <li><a class="dropdown-item" href="#">Cerrar</a></li>
                                 </ul>
                             </div>
                              
@@ -90,7 +90,6 @@
                                 <img src="./img/svg/cart.svg" alt="compra">
                             </button>
                         </form>
-                    </div>
                 </span>
                 
             </div>
@@ -118,6 +117,49 @@
                 </div>
             </div>
     </div>
+    <!-- FIN MODAL CARRITO -->
+
+    
+    <!-- MODAL INICIO SESION  -->
+    <div class="modal fade" id="iniciosesion" 
+    data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" 
+    aria-labelledby="iniciosesionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="iniciosesionLabel">Inicio de sesion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating">
+                        <input type="text" class="form-control " id="floatingInput" placeholder="usuario12">
+                        <label for="floatingInput">Nombre: </label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="email" class="form-control " id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Introduce el email</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Recuerdame
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="inicioS" type="button" class="btn btn-secondary" data-bs-dismiss="modal">LISTO</button>
+                    <a href="./html/regi.html"><button type="button" class="btn btn-primary">No tengo cuenta</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL INICIO SESION -->
+
 
       <!-- CAROUSEL -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">

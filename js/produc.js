@@ -14,7 +14,7 @@ function cargarJSON( json ) {
         content.innerHTML+="<div class='col'>"
                                 +"<div class='card shadow-sm'>"
                                     +"<h3 class='card-header'>"+json[i].nombre+"</h3>"
-                                    +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' width='100%' >"
+                                    +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' width='100%' height='240px'>"
                                         +"<div class='card-body'>"
                                             +"<h5 class='card-title'>Ingredientes</h5>"
                                             +"<div class='card-text'>"
