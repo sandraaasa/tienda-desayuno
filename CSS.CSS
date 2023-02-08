@@ -4,6 +4,10 @@ h1{
     
     font-family: "Poppins",sans-serif;
 }
+
 .bd-color-3{
-    border: #e277cd 1px solid;
+    border: #44243e 3px solid;
+}
+.back-color{
+    background-color: #e8c4e1;
 }
