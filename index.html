@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg back-color sticky-top">
         <div class="container-fluid">
             <!-- LOGO -->
-            <a class="navbar-brand col-12 col-sm-8 col-md-3  text-center " href="#">
+            <a class="navbar-brand col-12 col-sm-6 col-md-3  text-center " href="#">
                 <svg class="svg-standalone-icon mx-auto" width="20%"
                     viewBox="193.31015314114364 115 163.37969371771277 132.95975074493265">
                     <g data-paper-data="{&quot;isIcon&quot;:&quot;true&quot;,&quot;iconType&quot;:&quot;icon&quot;,&quot;rawIconId&quot;:&quot;11c0ac77-04b0-44f0-b303-9e9fdfd49d80&quot;,&quot;selectedEffects&quot;:{&quot;container&quot;:&quot;&quot;,&quot;transformation&quot;:&quot;&quot;,&quot;pattern&quot;:&quot;&quot;},&quot;isDetailed&quot;:false,&quot;fillRule&quot;:&quot;nonzero&quot;,&quot;bounds&quot;:{&quot;x&quot;:193.31015314114364,&quot;y&quot;:115,&quot;width&quot;:163.37969371771277,&quot;height&quot;:132.95975074493265},&quot;iconStyle&quot;:&quot;standalone&quot;,&quot;suitableAsStandaloneIcon&quot;:true}"
@@ -66,57 +66,24 @@
                         <img src="./img/svg/search.svg" alt="busca">
                     </button>
                 </form>
+
+                <!-- BOTON INICIO SESION -->
                 <div class="btn-group ">
                     <button id="inises" type="button" class="btn bd-color-3" data-bs-toggle="modal"
-                        data-bs-target="#inicioSesion">
+                        data-bs-target="#exampleModal">
                         <img src="./img/svg/person.svg" alt="inicioSes">
                     </button>
                     <button type="button" class="btn bd-color-3 dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
-
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#inicioSesion">Inicio
-                                sesion</a></li>
-                        <!-- MODAL INICIO SESION  -->
-                        <div class="modal fade" id="iniciosesion" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="iniciosesionLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="iniciosesionLabel">Inicio de sesion</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control " id="floatingInput"
-                                                placeholder="name@example.com">
-                                            <label for="floatingInput">Introduce el email</label>
-                                        </div>
-                                        <div class="form-floating">
-                                            <input type="password" class="form-control" id="floatingPassword"
-                                                placeholder="Password">
-                                            <label for="floatingPassword">Contraseña</label>
-                                        </div>
-
-                                        <div class="checkbox mb-3">
-                                            <label>
-                                                <input type="checkbox" value="remember-me"> Recuerdame
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button id="inicioS" type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">LISTO</button>
-                                        <a href="./html/regi.html"><button type="button" class="btn btn-primary">No
-                                                tengo cuenta</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- FIN MODAL INICIO SESION -->
+                        <li>
+                            <button id="ini" type="button" class="btn" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Inicio sesion
+                            </button>
+                        </li>
                         <li><a class="dropdown-item" href="./html/regi.html">Registrarse</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -125,48 +92,81 @@
                     </ul>
                 </div>
 
-                <button id="compra" class="btn bd-color-3" type="button" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
+                <!-- BOTON COMPRA -->
+                <button id="compra" class="btn bd-color-3" type="button" data-bs-target="#exampleModalToggle"
+                    data-bs-toggle="modal">
                     <img src="./img/svg/cart.svg" alt="compra">
                 </button>
-                <!-- MODAL CARRITO  -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Cesta</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <a href="./html/compra.html"><button type="button"
-                                        class="btn btn-primary">Comprar</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- FIN MODAL CARRITO -->
+
+
+                <!-- BOTON PRODUCTOS -->
                 <a aria-current="page" href="./html/productos.html">
                     <button type="button" class="btn mybtn bd-color-3">Productos</button>
                 </a>
-                    
 
             </div>
 
         </div>
     </nav>
+    <!-- MODAL CARRITO  -->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-2">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cesta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="./html/compra.html"><button type="button" class="btn btn-primary">Comprar</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL CARRITO -->
+
+    <!-- MODAL INICIO SESION  -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">inicio de sesion</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating">
+                        <input type="email" class="form-control " id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Introduce el email</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Recuerdame
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="inicioS" type="button" class="btn btn-secondary" data-bs-dismiss="modal">LISTO</button>
+                    <a href="./html/regi.html">
+                        <button type="button" class="btn btn-primary">No tengo cuenta</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL INICIO SESION -->
 
 
 
 
-
-
-
+<!--  CUERPO -->
 
     <!-- CAROUSEL -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -209,12 +209,10 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <!-- cuerpo -->
+
     <div class="container marketing">
 
-
-
-        <!-- START THE FEATURETTES -->
+        <!-- DATOS INICIO -->
 
         <hr class="featurette-divider">
 
@@ -285,10 +283,11 @@
         </div>
 
         <hr class="featurette-divider">
+        <!-- FINAL DATOS -->
 
-        <!-- /END THE FEATURETTES -->
+<!-- FINAL CUERPO -->
 
-
+<!-- FOOTER -->
         <footer class="container py-5">
             <div class="row">
                 <div class="col-12 col-md">
