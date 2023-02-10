@@ -7,6 +7,7 @@ function signup() {
     let email=document.getElementById("floatingInputEmail").value;
     let contra=document.getElementById("floatingInputPassword").value;
     
+    // creamos el usuario
     localStorage.setItem("email",email);
     localStorage.setItem("contra",contra);
     localStorage.setItem("nombre",nombre);
@@ -14,8 +15,9 @@ function signup() {
     if (localStorage.getItem("users")!="") {
         users.push(localStorage.getItem("users").split("*"));
     }
+    // almacenamos el usuario en un array con los demas usuarios
     for (let i = 0; i < users.length; i++) {
-        const usuario=users[i].split(";");
+        const usuario=users[i][0].split(";");
         if (usuario[1]===email) {
             errorYaRegis();
         }else{
@@ -23,7 +25,7 @@ function signup() {
             let usuarios=usuario.join(";");
             users.push(usuarios);
             localStorage.setItem("users",users.join("*"));
-            window.location.href= "../index.html";
+            window.open("../index.html");
     
         }
     }
@@ -54,7 +56,10 @@ function signin(){
     if (on==true) {
         errorNoUsuario();
     } else {
-        document.getElementById("toast-body").innerHTML+=" <br>"+localStorage.getItem("nombre").toUpperCase+"!!!";
+
+        // document.getElementById("exampleModal").style.display="none";
+        // document.getElementById("exampleModal").setAttribute("aria-hidden","true");
+        document.getElementById("toast-body").innerHTML="HOLAA "+localStorage.getItem("nombre")+"!!!";
         const toast = new bootstrap.Toast(document.getElementById("liveToast"));
         toast.show();
     }

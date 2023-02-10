@@ -102,7 +102,7 @@
 
 
                 <!-- BOTON PRODUCTOS -->
-                <a aria-current="page" href="./html/productos.html">
+                <a aria-current="page" href="./html/productos.html" class="link-secondary placeholder-glow">
                     <button type="button" class="btn mybtn bd-color-3">Productos</button>
                 </a>
 
@@ -136,7 +136,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">inicio de sesion</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">INICIO DE SESION</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -148,18 +148,18 @@
                         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Contraseña</label>
                     </div>
-                    <div class="checkbox mb-3">
+                    <!-- <div class="checkbox mb-3">
                         <label>
                             <input type="checkbox" value="remember-me"> Recuerdame
                         </label>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <div class="col-12" id="liveAlertPlaceholder"></div>
-                    <button id="inicioS" type="button" class="btn btn-secondary"
+                    <button type="button" class="btn bd-color-3"
                         onclick="signin()" id="liveToastBtn">LISTO</button>
                     <a href="./html/regi.html">
-                        <button type="button" class="btn btn-primary">No tengo cuenta</button>
+                        <button type="button" class="btn btn-warning">No tengo cuenta</button>
                     </a>
                 </div>
             </div>
@@ -171,7 +171,7 @@
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-                <img src="./img/logo.png" class="rounded me-2" alt="...">
+                <img src="./img/logo.png" class="rounded" width="10%" alt="...">
                 <strong class="me-auto">BRUNCH PIT</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
