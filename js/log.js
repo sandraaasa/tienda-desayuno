@@ -6,20 +6,28 @@ function signup() {
     let nombre=document.getElementById("floatingInputName").value;
     let email=document.getElementById("floatingInputEmail").value;
     let contra=document.getElementById("floatingInputPassword").value;
+    
     localStorage.setItem("email",email);
     localStorage.setItem("contra",contra);
     localStorage.setItem("nombre",nombre);
-    const users="";
+    const users=[];
     if (localStorage.getItem("users")!="") {
-        users=localStorage.getItem("users").split("*");
+        users.push(localStorage.getItem("users").split("*"));
+    }
+    for (let i = 0; i < users.length; i++) {
+        const usuario=users[i].split(";");
+        if (usuario[1]===email) {
+            errorYaRegis();
+        }else{
+            const usuario=[localStorage.getItem("nombre"),localStorage.getItem("email"),localStorage.getItem("contra")];
+            let usuarios=usuario.join(";");
+            users.push(usuarios);
+            localStorage.setItem("users",users.join("*"));
+            window.location.href= "../index.html";
+    
+        }
     }
     
-    const usuario=[localStorage.getItem("nombre"),localStorage.getItem("email"),localStorage.getItem("contra")];
-    let usuarios=usuario.join(";");
-    users.push(usuarios);
-    localStorage.setItem("users",users.join("*"));
-    window.location.href= "../index.html";
-
 }
 function signin(){
 
@@ -46,7 +54,9 @@ function signin(){
     if (on==true) {
         errorNoUsuario();
     } else {
-        
+        document.getElementById("toast-body").innerHTML+=" <br>"+localStorage.getItem("nombre").toUpperCase+"!!!";
+        const toast = new bootstrap.Toast(document.getElementById("liveToast"));
+        toast.show();
     }
     
 
@@ -58,6 +68,19 @@ function errorNoUsuario() {
         wrapper.innerHTML = [
           `<div class="alert alert-warning alert-dismissible" role="alert">`,
           `   <div>Primero tienes que registrarte</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('');
+      
+        alertPlaceholder.append(wrapper);
+}
+
+function errorYaRegis() {
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+          `<div class="alert alert-warning alert-dismissible" role="alert">`,
+          `   <div>Ya estas registrado prueba a iniciar sesion</div>`,
           '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
           '</div>'
         ].join('');
