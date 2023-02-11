@@ -1,67 +1,46 @@
+
 function signup() {
     if (localStorage.getItem("users")==null) {
-        localStorage.setItem("users","");
+        localStorage.setItem("users","[]");
     }
 
     let nombre=document.getElementById("floatingInputName").value;
     let email=document.getElementById("floatingInputEmail").value;
     let contra=document.getElementById("floatingInputPassword").value;
     
-    // creamos el usuario
-    localStorage.setItem("email",email);
-    localStorage.setItem("contra",contra);
-    localStorage.setItem("nombre",nombre);
-    const users=[];
-    if (localStorage.getItem("users")!="") {
-        users.push(localStorage.getItem("users").split("*"));
-    }
     // almacenamos el usuario en un array con los demas usuarios
-    for (let i = 0; i < users.length; i++) {
-        const usuario=users[i][0].split(";");
-        if (usuario[1]===email) {
-            errorYaRegis();
-        }else{
-            const usuario=[localStorage.getItem("nombre"),localStorage.getItem("email"),localStorage.getItem("contra")];
-            let usuarios=usuario.join(";");
-            users.push(usuarios);
-            localStorage.setItem("users",users.join("*"));
-            window.open("../index.html");
-    
-        }
+
+    if (createUser(nombre,email,contra)) {
+        window.location.href="/";
     }
+            //window.open("../index.html");
+    
     
 }
 function signin(){
 
     let email = document.getElementById("floatingInput").value;
     let contra= document.getElementById("floatingPassword").value;
-    let on=false;
 
     if (localStorage.getItem("users")==null) {
         errorNoUsuario();
     } else {
-        const users=localStorage.getItem("users").split("*");
-        for (let i = 0; i < users.length; i++) {
-            const usuario=users[i].split(";");
-            if (usuario[1]===email && usuario[2]===contra) {
-                localStorage.setItem("email",email);
-                localStorage.setItem("contra",contra);
-                localStorage.setItem("nombre",usuario[0]);
-                on=false;
-            }else{
-                on=true;
-            }
+        const users = JSON.parse(localStorage.getItem("users"));
+        if (users.some(user=>user.email==email&&user.contra==contra)) {
+            let nombre=users;
+            localStorage.setItem("nombre",nombre);
+            document.getElementById("toast-body").innerHTML="Hola "+localStorage.getItem("nombre")+"!!!";
+            const toast = new bootstrap.Toast(document.getElementById("liveToast"));
+            toast.show();
+            
+            setTimeout(() =>{
+                location.reload();
+            },2000);
+            
+        }else{
+            errorNoUsuario();
         }
-    }
-    if (on==true) {
-        errorNoUsuario();
-    } else {
-
-        // document.getElementById("exampleModal").style.display="none";
-        // document.getElementById("exampleModal").setAttribute("aria-hidden","true");
-        document.getElementById("toast-body").innerHTML="HOLAA "+localStorage.getItem("nombre")+"!!!";
-        const toast = new bootstrap.Toast(document.getElementById("liveToast"));
-        toast.show();
+        
     }
     
 
@@ -91,4 +70,23 @@ function errorYaRegis() {
         ].join('');
       
         alertPlaceholder.append(wrapper);
+}
+function createUser(nombre, email, contra) {
+    let on =false;
+    const newUser = {
+        "nombre":nombre,
+        "email":email,
+        "contra":contra
+    }
+
+    const users = JSON.parse(localStorage.getItem("users"));
+    if (users.some(user=>user.email==email)) {
+        errorYaRegis();
+    }else{
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("nombre",nombre);
+        on=true;
+    }
+    return on;
 }

@@ -1,17 +1,14 @@
 window.onload=function () {
 //creamos el usuario predefinido
     if (localStorage.getItem("users")==null) {
-        localStorage.setItem("email","email@email.com");
-        localStorage.setItem("contra","1234");
-        localStorage.setItem("nombre","nombre");
-        const users=[];    
-        const usuario=[localStorage.getItem("nombre"),localStorage.getItem("email"),localStorage.getItem("contra")];
-            let usuarios=usuario.join(";");
-            users.push(usuarios);
-            localStorage.setItem("users",users.join("*"));
+        localStorage.setItem("users","[]");
+        let [ nombre, email, contra] = ["nombre", "nombre@nombre.com", "1234"];
+        createUser(nombre,email,contra);
+        
     }
-}
-function notificacion() {
-    
 
+// mostramos la notificacion de bienvenida   
+    document.getElementById("toast-body").innerHTML="Hola "+localStorage.getItem("nombre")+"!!!";
+    const toast = new bootstrap.Toast(document.getElementById("liveToast"));
+    toast.show();
 }
