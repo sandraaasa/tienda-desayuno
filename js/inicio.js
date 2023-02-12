@@ -6,6 +6,10 @@ window.onload=function () {
         createUser(nombre,email,contra);
         
     }
+    
+    if (localStorage.getItem("carrito")==null) {
+        localStorage.setItem("carrito","[]");
+    }
 
 // mostramos la notificacion de bienvenida   
     document.getElementById("toast-body").innerHTML="Hola "+localStorage.getItem("nombre")+"!!!";
