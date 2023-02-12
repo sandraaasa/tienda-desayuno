@@ -4,6 +4,17 @@ window.onload=  function cargar() {
         .then (json => cargarJSON(json))
         .then( productos => mas() )
         .catch(e => alert(e));
+
+            
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([51.5, -0.09]).addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
 }
 function cargarJSON( json ) {
     let content = document.getElementById("contenedor");
@@ -23,13 +34,14 @@ function cargarJSON( json ) {
                                             +"<div class='d-flex justify-content-between align-items-center'>"
                                                 +"<div class='btn-group'>"
                                                     +"<button type='button' class='btn btn-sm btn-outline-secondary fav'><img src='../img/svg/heart.svg' alt='fav'></button>"
-                                                    +"<button type='button' class='btn btn-sm btn-outline-secondary buy'> <img src='../img/svg/bag-plus.svg' alt='buy'></button>"
+                                                    +"<button type='button' class='btn btn-sm btn-outline-secondary buy' id='"+i+"'> <img src='../img/svg/bag-plus.svg' alt='buy'></button>"
                                                 +"</div>"
                                             +"</div>"
                                         +"</div>"
                                 +"</div>"
                             +"</div>";
     }
+
 }
 
 function listaIngr(json) {
@@ -62,6 +74,7 @@ function mas() {
             }else{
                 fav[i].firstElementChild.src="../img/svg/heart-fill.svg";
             }
+
             
         });
     }
@@ -72,6 +85,7 @@ function mas() {
                 buy[i].firstElementChild.src="../img/svg/bag-plus.svg";
             }else{
                 buy[i].firstElementChild.src="../img/svg/bag-plus-fill.svg";
+                let product=document.getElementById
             }
             
         });

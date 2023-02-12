@@ -1,7 +1,7 @@
 [
     
         {
-            "id":"01",
+            "id":"1",
             "nombre":"Tostadas francesas",
             "precio":"3.5",
             "categoria":"tostada",
@@ -20,7 +20,7 @@
             "img":"img/t-francesa.jpg"
         },
         {
-            "id":"02",
+            "id":"2",
             "nombre":"Tostadas vegana",
             "precio":"3.5",
             "categoria":"tostada",
@@ -34,7 +34,7 @@
             "img":"img/t-vegana.jpg"
         },
         {
-            "id":"03",
+            "id":"3",
             "nombre":"Tostadas mermelada",
             "precio":"1.5",
             "categoria":"tostada",
@@ -55,7 +55,7 @@
             "img":"img/t-mermelada.jpg"
         },
         {
-            "id":"04",
+            "id":"4",
             "nombre":"Tostadas hummus",
             "precio":"2.5",
             "categoria":"tostada",
@@ -69,7 +69,7 @@
             "img":"img/donut.jpg"
         },
         {
-            "id":"05",
+            "id":"5",
             "nombre":"croissant",
             "precio":"0.5",
             "categoria":"bolleria",
@@ -85,7 +85,7 @@
             "img":"img/croissant.jpg"
         },
         {
-            "id":"06",
+            "id":"6",
             "nombre":"donut",
             "precio":"1",
             "categoria":"bolleria",
@@ -100,7 +100,7 @@
             "img":"img/donut.jpg"
         },
         {
-            "id":"07",
+            "id":"7",
             "nombre":"hummus",
             "precio":"1",
             "categoria":"snack",
@@ -113,7 +113,7 @@
             "img":"img/snk-hummus.jpg"
         },
         {
-            "id":"08",
+            "id":"8",
             "nombre":"Tostadas dibujos",
             "precio":"3.5",
             "categoria":"tostada",
@@ -127,7 +127,7 @@
             "img":"img/t-dibu-perr.jpg"
         },
         {
-            "id":"09",
+            "id":"9",
             "nombre":"Batidos de frutas",
             "precio":"3",
             "categoria":"bebidos",

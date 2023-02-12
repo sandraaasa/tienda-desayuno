@@ -1,13 +1,11 @@
-const salida = document.getElementById('busqueda');
-const microfono = document.getElementById('buscarmic');
 
-microfono.addEventListener('click', ejecutarSpeechAPI);
+
+document.getElementById('buscarmic').onclick= ejecutarSpeechAPI;
 
 function ejecutarSpeechAPI() {
     //crear el objeto Speech Recognition
     const SpeechRecognition = webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-    recognition.lang="es.VE";
 
     // comienza el reconocimiento
     recognition.start();
@@ -26,9 +24,9 @@ function ejecutarSpeechAPI() {
     //Se ejecuta cuando obtiene los resultados del reconocimiento
     recognition.onresult = function (e) {
         console.log(e.results);
-                var transcript = e.results[0][0].transcript;
-                salida.value=transcript;
-            
+        var transcript = e.results[0][0].transcript;
+        alert(transcript);
+        document.getElementById('busqueda').value=transcript;
         
     };
 }
