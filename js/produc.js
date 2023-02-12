@@ -132,7 +132,7 @@ function carrito(json) {
                                     +"<div></div>"
                                     +"<button type='button' class='btn btn-danger col-2' onclick='sumar()'>+</button>"
                                 +"</li>";
-            total+=json[carro[i].id].precio;
+            total=total+json[carro[i].id].precio;
         }
 
     }
