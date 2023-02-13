@@ -26,16 +26,15 @@ if (!('webkitSpeechRecognition' in window)) {
 
     
     micro.addEventListener("click",()=>{
-        recognition.start();
-        console.log('grabando...');
-    })
-    /*     if (micro.firstElementChild.src.includes("mute")) {
+        if (micro.firstElementChild.src.includes("mute")) {
             micro.firstElementChild.src="../img/svg/mic-fill.svg";
-            
+                
+            recognition.start();
+            console.log('grabando...');
         } else {
             micro.firstElementChild.src="../img/svg/mic-mute-fill.svg";
             recognition.stop();
             console.log('dejo de escuchar');
         }
-    }) */
+    }) 
 }
