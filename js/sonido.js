@@ -1,32 +1,41 @@
+var recognition;
+let micro = document.getElementById("buscarmic");
+let inputSearch = document.getElementById("busqueda");
+var transcript="";
 
+if (!('webkitSpeechRecognition' in window)) {
+    alert("¡API no soportada!");
+} else {
+    recognition = new webkitSpeechRecognition();
+    recognition.lang = 'es-ES';
+    recognition.continuous = true;
+    recognition.interimResults = true;
 
-document.getElementById('buscarmic').onclick= ejecutarSpeechAPI;
-
-function ejecutarSpeechAPI() {
-    //crear el objeto Speech Recognition
-    const SpeechRecognition = webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-
-    // comienza el reconocimiento
-    recognition.start();
-
-    // Detecta cuando empieza a hablar(start) y muestra Escuchando...
-    recognition.onstart = function () {
-        console.log("Escuchando...");
-
-    };
-    // Detecta cuando deja de hablar (speechend) y para el reconocimiento(stop())  
-    recognition.onspeechend = function () {
-        console.log("Se detuvo de ejecutar");
-        recognition.stop();
-    };
-
-    //Se ejecuta cuando obtiene los resultados del reconocimiento
     recognition.onresult = function (e) {
-        console.log(e.results);
-        var transcript = e.results[0][0].transcript;
-        alert(transcript);
-        document.getElementById('busqueda').value=transcript;
+        console.log("entrando en onresult");
+        transcript = e.results[0][0].transcript;
+        inputSearch.value=transcript.toLowerCase();
+        console.log(transcript);
         
-    };
+    }
+
+    recognition.onerror = (e) => {
+        console.log(e);
+        console.log(e.message);
+    }
+
+    
+    micro.addEventListener("click",()=>{
+        recognition.start();
+        console.log('grabando...');
+    })
+    /*     if (micro.firstElementChild.src.includes("mute")) {
+            micro.firstElementChild.src="../img/svg/mic-fill.svg";
+            
+        } else {
+            micro.firstElementChild.src="../img/svg/mic-mute-fill.svg";
+            recognition.stop();
+            console.log('dejo de escuchar');
+        }
+    }) */
 }

@@ -51,29 +51,7 @@
                   </svg></span>
                   <span class="badge bg-primary rounded-pill" id="contador">contador</span>
                 </h4>
-                <ul class="list-group mb-3">
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div class="col-6">
-                      <h6 class="my-0">Nombre del producto</h6>
-                      <small class="text-muted">esto se modifica con js</small>
-                    </div>
-                    <span class="text-muted col-1">5€</span>
-                    <button type="button" class="btn btn-danger col-2">-</button>
-                    <button type="button" class="btn btn-danger col-2">+</button>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between bg-light">
-                    <div class="text-success col-6">
-                      <h6 class="my-0">Promo san-valenton</h6>
-                      <small>25%</small>
-                    </div>
-                    <span class="text-success col-1">5€</span>
-                    <button type="button" class="btn btn-danger col-2">-</button>
-                    <button type="button" class="btn btn-danger col-2">+</button>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between">
-                    <span>Total </span>
-                    <strong>0€</strong>
-                  </li>
+                <ul class="list-group mb-3" id="compra">
                 </ul>
         
                 <form class="card p-2">
@@ -89,49 +67,37 @@
                     <div class="col-sm-6">
                       <label for="firstName" class="form-label">Nombre*</label>
                       <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                      <div class="invalid-feedback">
-                        Valid first name is required.
-                      </div>
+                      
                     </div>
         
                     <div class="col-sm-6">
                       <label for="lastName" class="form-label">Apellidos*</label>
                       <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                      <div class="invalid-feedback">
-                        Valid last name is required.
-                      </div>
+                      
                     </div>
 
                     <div class="col-sm-6">
                       <label for="lastName" class="form-label">DNI o CIF/NIF*</label>
                       <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                      <div class="invalid-feedback">
-                        Valid last name is required.
-                      </div>
+                      
                     </div>
                     
                     <div class="col-sm-6">
                       <label for="lastName" class="form-label">Movil <span class="lead">(Opcional)</span></label>
                       <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                      <div class="invalid-feedback">
-                        Valid last name is required.
-                      </div>
+                      
                     </div>
         
                     <div class="col-12">
                       <label for="email" class="form-label">Correo*</label>
                       <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                      <div class="invalid-feedback">
-                        Please enter a valid email address for shipping updates.
-                      </div>
+                      
                     </div>
         
                     <div class="col-12">
                       <label for="address" class="form-label">Dirección*</label>
                       <input type="text" class="form-control" id="address" placeholder="Calle Pedro Martin, 17 - 8ªA" required="">
-                      <div class="invalid-feedback">
-                        Please enter your shipping address.
-                      </div>
+                      
                     </div>
         
                     <div class="col-md-5">
@@ -140,25 +106,18 @@
                         <option value="">Madrid</option>
                         <option>Barcelona</option>
                       </select>
-                      <div class="invalid-feedback">
-                        Please select a valid country.
-                      </div>
                     </div>
         
                     <div class="col-md-3">
                       <label for="zip" class="form-label">Población*</label>
                       <input type="text" class="form-control" id="zip" placeholder="" required="">
-                      <div class="invalid-feedback">
-                        Zip code required.
-                      </div>
+                      
                     </div>
         
                     <div class="col-md-3">
                       <label for="zip" class="form-label">Codigo postal*</label>
                       <input type="text" class="form-control" id="zip" placeholder="" required="">
-                      <div class="invalid-feedback">
-                        Zip code required.
-                      </div>
+                      
                     </div>
                   </div>
         
@@ -172,7 +131,7 @@
         
                   <hr class="my-4">
         
-                  <h4 class="mb-3">Payment</h4>
+                  <h4 class="mb-3">Formas de pago</h4>
         
                   <div class="my-3">
                     <div class="form-check">
@@ -194,33 +153,25 @@
                       <label for="cc-name" class="form-label">Nombre de la tarjeta</label>
                       <input type="text" class="form-control" id="cc-name" placeholder="" required="">
                       <!-- <small class="text-muted">Full name as displayed on card</small> -->
-                      <div class="invalid-feedback">
-                        Name on card is required
-                      </div>
+                      
                     </div>
         
                     <div class="col-md-6">
                       <label for="cc-number" class="form-label">Numero de la tarjeta</label>
                       <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                      <div class="invalid-feedback">
-                        Credit card number is required
-                      </div>
+                      
                     </div>
         
                     <div class="col-md-3">
                       <label for="cc-expiration" class="form-label">Fecha de expiracion</label>
                       <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                      <div class="invalid-feedback">
-                        Expiration date required
-                      </div>
+                      
                     </div>
         
                     <div class="col-md-3">
                       <label for="cc-cvv" class="form-label">CVV</label>
                       <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                      <div class="invalid-feedback">
-                        Security code required
-                      </div>
+                      
                     </div>
                   </div>
         

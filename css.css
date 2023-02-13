@@ -19,3 +19,22 @@
     border-radius:  0px 20px 20px 0px;
     padding: 10px;
 }
+.animated-button {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    background-color: #e277cd;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+  
+  .animated-button:hover {
+    transform: scale(0.5);
+    box-shadow: 0 0 10px #e277cd;
+  }
+  
+  .animated-button:active {
+    transform: scale(0.9);
+  }

@@ -58,14 +58,15 @@
                 <!-- BUSQUEDA Y VOZ -->
                 <form class=" d-flex justify-content-end mb-5 mb-md-0">
                     <div class="collapse collapse-horizontal" id="collapseExample" >
-                        <input id="busqueda" class="form-control me-2 " type="text" placeholder="Search"
-                            aria-label="Search">
+                        <div class="d-flex">
+                            <input id="busqueda" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                                
+                            <button id="buscarmic" class="btn" type="button" aria-expanded="false">
+                                <img src="./img/svg/mic-fill.svg" alt="micro">
+                            </button>
+                        </div>
                     </div>
-                    <button id="buscarmic" class="btn" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        <img src="./img/svg/mic-fill.svg" alt="micro">
-                    </button>
-                    <button id="buscar" class="btn bd-color-3" type="button" data-bs-toggle="collapse"
+                    <button id="buscar" class="btn animated-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         <img src="./img/svg/search.svg" alt="busca">
                     </button>
@@ -73,11 +74,11 @@
 
                 <!-- BOTON INICIO SESION -->
                 <div class="btn-group ">
-                    <button id="inises" type="button" class="btn bd-color-3" data-bs-toggle="modal"
+                    <button id="inises" type="button" class="btn animated-button" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
                         <img src="./img/svg/person.svg" alt="inicioSes">
                     </button>
-                    <button type="button" class="btn bd-color-3 dropdown-toggle dropdown-toggle-split"
+                    <button type="button" class="btn animated-button dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
@@ -96,8 +97,7 @@
 
                 <!-- BOTON PRODUCTOS -->
                 <a aria-current="page" href="./html/productos.html" class="link-secondary placeholder-glow">
-                    <button type="button" class="btn mybtn bd-color-3">Productos</button>
-                </a>
+                    <button type="button" class="btn animated-button">Productos</button>                </a>
 
             </div>
 
