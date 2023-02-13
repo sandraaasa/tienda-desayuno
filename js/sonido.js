@@ -28,13 +28,13 @@ if (!('webkitSpeechRecognition' in window)) {
     micro.addEventListener("click",()=>{
         if (micro.firstElementChild.src.includes("mute")) {
             micro.firstElementChild.src="../img/svg/mic-fill.svg";
-                
-            recognition.start();
-            console.log('grabando...');
+            recognition.stop();
+            console.log('dejo de escuchar');   
         } else {
             micro.firstElementChild.src="../img/svg/mic-mute-fill.svg";
-            recognition.stop();
-            console.log('dejo de escuchar');
+             
+            recognition.start();
+            console.log('grabando...');
         }
     }) 
 }
