@@ -13,7 +13,7 @@
     <script src="./js/log.js"></script>
     <script src="./js/sonido.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 </head>
 
 <body>
@@ -93,12 +93,6 @@
                     </ul>
                 </div>
 
-                <!-- BOTON COMPRA -->
-                <button id="compra" class="btn bd-color-3" type="button" data-bs-target="#exampleModalToggle"
-                    data-bs-toggle="modal">
-                    <img src="./img/svg/cart.svg" alt="compra">
-                </button>
-
 
                 <!-- BOTON PRODUCTOS -->
                 <a aria-current="page" href="./html/productos.html" class="link-secondary placeholder-glow">
@@ -109,27 +103,6 @@
 
         </div>
     </nav>
-    <!-- MODAL CARRITO  -->
-    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-        tabindex="-2">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Cesta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul class="list-group mb-3">
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <a href="./html/compra.html"><button type="button" class="btn btn-primary">Comprar</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- FIN MODAL CARRITO -->
 
     <!-- MODAL INICIO SESION  -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -148,11 +121,6 @@
                         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Contraseña</label>
                     </div>
-                    <!-- <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Recuerdame
-                        </label>
-                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <div class="col-12" id="liveAlertPlaceholder"></div>
@@ -167,11 +135,12 @@
     </div>
     <!-- FIN MODAL INICIO SESION -->
 
+
     <!-- BIENVENIDO -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-                <img src="./img/logo.png" class="rounded" width="10%" alt="...">
+                <img src="../img/logo.png" class="rounded" width="10%" alt="...">
                 <strong class="me-auto">BRUNCH PIT</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
@@ -181,11 +150,10 @@
         </div>
     </div>
 
-
     <!-- CUERPO -->
 
     <!-- CAROUSEL -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -201,16 +169,18 @@
             </div>
             <div class="carousel-item">
                 <img src="img/carousel/conzumo.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+                <div class="carousel-caption d-none d-md-block font back-texto">
+                    <h3>Las mejores combinaciones para que disfrutes de un Brunch con tus amigos y familia</h3>
+                    
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./img/carousel/conchocolate.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                <a href="./html/productos.html">
+                    <img src="./img/carousel/conchocolate.jpg" class="d-block w-100" alt="...">
+                </a>
+                <div class="carousel-caption d-none d-md-block font back-texto">
+                    <h3>PROMOCIONES</h3>
+                    <p>Todos nuestros productos en descuento.</p>
                 </div>
             </div>
         </div>
@@ -234,7 +204,7 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">Vegetariano. </h2>
+                <h2 class="featurette-heading fw-normal lh-1 font back-texto">VEGETARIANO. </h2>
                 <div>
                     <ul>
                         <li><strong>PRECIO</strong>: 3.5€</li>
@@ -258,8 +228,7 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">YOUR-PIT<span class="text-muted"> el snack del
-                        momento</span></h2>
+                <h2 class="featurette-heading fw-normal lh-1 font back-texto">YORK-PIT</h2>
                 <div>
                     <ul>
                         <li><strong>PRECIO</strong>: 3.5€</li>
@@ -268,7 +237,7 @@
                 <div>
                     <h3 class="text-muted">Ingredientes</h3>
                     <ul>
-                        <li>datos de json y estos div se sacan con js</li>
+                        <li></li>
                     </ul>
                 </div>
             </div>
@@ -283,8 +252,7 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">SNACK PIT<span class="text-muted"> el snack del
-                        momento</span></h2>
+                <h2 class="featurette-heading fw-normal lh-1 font back-texto">SNACK PIT</h2>
                 <div>
                     <ul>
                         <li><strong>PRECIO</strong>: 3.5€</li>

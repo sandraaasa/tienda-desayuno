@@ -1,6 +1,5 @@
-h1{
-    
-    font-family: "Poppins",sans-serif;
+.font{
+    font-family: 'Kalam', cursive;
 }
 .bd-color-3{
     border: #8a467c 2px solid;
@@ -12,4 +11,11 @@ h1{
 }
 .back-color{
     background-color: #7c4272d7;
+}
+.back-texto{
+    color: rgb(34, 3, 41);
+    background-color: rgb(226, 128, 226, 0.7) ;
+    border-left: 15px solid palevioletred;
+    border-radius:  0px 20px 20px 0px;
+    padding: 10px;
 }

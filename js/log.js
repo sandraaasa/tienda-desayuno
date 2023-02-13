@@ -1,4 +1,3 @@
-
 function signup() {
     if (localStorage.getItem("users")==null) {
         localStorage.setItem("users","[]");
@@ -27,7 +26,7 @@ function signin(){
     } else {
         const users = JSON.parse(localStorage.getItem("users"));
         if (users.some(user=>user.email==email&&user.contra==contra)) {
-            let nombre=users;
+            let nombre=users.find(user=>user.email==email&&user.contra==contra).nombre;
             localStorage.setItem("nombre",nombre);
             document.getElementById("toast-body").innerHTML="Hola "+localStorage.getItem("nombre")+"!!!";
             const toast = new bootstrap.Toast(document.getElementById("liveToast"));

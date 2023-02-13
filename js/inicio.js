@@ -15,7 +15,7 @@ window.onload=function () {
     document.getElementById("toast-body").innerHTML="Hola "+localStorage.getItem("nombre")+"!!!";
     const toast = new bootstrap.Toast(document.getElementById("liveToast"));
     toast.show();
-    
+// geolocalizacion
     var map = L.map('map').setView([51.505, -0.09], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,6 +23,6 @@ window.onload=function () {
     }).addTo(map);
 
     L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .bindPopup('Brunch Pit<br> Estamos aqui.')
         .openPopup();
 }
