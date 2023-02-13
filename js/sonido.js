@@ -12,10 +12,8 @@ if (!('webkitSpeechRecognition' in window)) {
     recognition.interimResults = true;
 
     recognition.onresult = function (e) {
-        console.log("entrando en onresult");
         transcript = e.results[0][0].transcript;
         inputSearch.value=transcript.toLowerCase();
-        console.log(transcript);
         
     }
 

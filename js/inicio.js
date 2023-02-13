@@ -25,4 +25,7 @@ window.onload=function () {
     L.marker([51.5, -0.09]).addTo(map)
         .bindPopup('Brunch Pit<br> Estamos aqui.')
         .openPopup();
+
+// sonido
+    document.getElementById("sonidoInicio").insertAdjacentElement("",)
 }

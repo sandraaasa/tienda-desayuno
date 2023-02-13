@@ -12,7 +12,6 @@ function signup() {
     if (createUser(nombre,email,contra)) {
         window.location.href="/";
     }
-            //window.open("../index.html");
     
     
 }

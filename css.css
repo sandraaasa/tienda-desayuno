@@ -7,7 +7,6 @@
 }
 .bd-color-3:hover{
     background-color: #e277cd;
-    
 }
 .back-color{
     background-color: #7c4272d7;
@@ -23,18 +22,40 @@
     border: none;
     outline: none;
     padding: 8px 16px;
+    margin-left: 1%;
     background-color: #e277cd;
     color: white;
     border-radius: 10px;
     font-size: 16px;
     transition: all 0.2s;
-  }
+}
   
-  .animated-button:hover {
+.animated-button:hover {
     transform: scale(0.5);
     box-shadow: 0 0 10px #e277cd;
+}
+  
+.animated-button:active {
+    transform: scale(0.9);
+}
+
+.ajustar{
+    object-fit: cover;
+}
+.ajustar:hover {
+    animation: anima 2s ease-in;
   }
   
-  .animated-button:active {
-    transform: scale(0.9);
+  @keyframes anima {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
