@@ -27,5 +27,5 @@ window.onload=function () {
         .openPopup();
 
 // sonido
-    document.getElementById("sonidoInicio").insertAdjacentElement("",)
+    // document.getElementById("sonidoInicio").insertAdjacentElement("",)
 }
