@@ -167,5 +167,30 @@
                 
             ],
             "img":"img/cafe.jpg"
+        },
+        {
+            "id":"11",
+            "nombre":"Menu York",
+            "precio":"5",
+            "categoria":"Menu",
+            "ingredientes":[
+                "Sandwich de jamos y queso",
+                "tomate",
+                "patatas"
+                
+            ],
+            "img":"img/m-sandw-york-queso.jpg"
+        },
+        {
+            "id":"12",
+            "nombre":"Tarta fresa",
+            "precio":"7",
+            "categoria":"Tarta",
+            "ingredientes":[
+                "tarta",
+                "nata",
+                "fresas"
+            ],
+            "img":"img/tar-fresas-queso.jpg"
         }
     ]

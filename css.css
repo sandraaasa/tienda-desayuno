@@ -39,7 +39,7 @@
 
 /* carta de productos */
 .overlay{
-    display: block;
+    display: none;
     position: relative;
 }
 .money{

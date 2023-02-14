@@ -58,11 +58,15 @@ function cargarJSON( json ) {
     }
     document.getElementById("carrito").addEventListener("click",carrito);
     
-    const img = document.getElementsByClassName("ajustar");
+    const imgs = document.getElementsByClassName("ajustar");
     
-    for (let i = 0; i < img.length; i++) {
-        img[i].addEventListener("click", ()=>{
-            document.getElementsByClassName("card-img-overlay")[i].display='block';
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].addEventListener("mouseover", ()=>{
+            if (document.getElementsByClassName("overlay")[i].style.display=="block") {
+                document.getElementsByClassName("overlay")[i].style.display="none";
+            } else {
+                document.getElementsByClassName("overlay")[i].style.display="block";
+            }
         })
     }
     
