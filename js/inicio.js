@@ -25,7 +25,6 @@ window.onload=function () {
         .bindPopup('Brunch Pit<br> Estamos aqui.')
         .openPopup();
 
-// sonido
-    // document.getElementById("sonidoInicio").insertAdjacentElement("",)
+
     
 }

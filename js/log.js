@@ -82,6 +82,12 @@ function validar() {
         errorEmail();
     }
 
+    if (on1==true&&on2==true&&on3==true&&on4==true) {
+        on1=true;
+    } else {
+        on1=false;
+    }
+    return on1;
 }
 
 /* INICIO SESION */
@@ -141,7 +147,7 @@ function errorYaRegis() {
 }
 
 function errorContraNIgual() {
-    const alertPlaceholder = document.getElementById('AlertPlacecontra')
+    const alertPlaceholder = document.getElementById('AlertPlacecontra1')
         const err = document.createElement('div')
         err.innerHTML = [
           `<div class="alert alert-warning alert-dismissible" role="alert">`,
@@ -154,7 +160,7 @@ function errorContraNIgual() {
 }
 
 function errorPass() {
-    const alertPlaceholder = document.getElementById('AlertPlacenombre')
+    const alertPlaceholder = document.getElementById('AlertPlacecontra2')
         const err = document.createElement('div')
         err.innerHTML = [
           `<div class="alert alert-warning alert-dismissible" role="alert">`,
@@ -178,7 +184,7 @@ function errorNombre() {
         alertPlaceholder.append(err);
 }
 function errorEmail() {
-    const alertPlaceholder = document.getElementById('AlertPlacenombre')
+    const alertPlaceholder = document.getElementById('AlertPlaceemail')
         const err = document.createElement('div')
         err.innerHTML = [
           `<div class="alert alert-warning alert-dismissible" role="alert">`,
