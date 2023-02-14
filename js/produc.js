@@ -97,11 +97,7 @@ function mas() {
                 buy[i].firstElementChild.src="../img/svg/bag-plus.svg";
                 //carrito eliminar
                 const carro=JSON.parse(localStorage.getItem("carrito"));
-                if (carro.some(elem => elem.id == id)) {
-                    carro.splice(carro.indexOf(id),1);
-                }else{
-                    console.log("");
-                }
+                carro.splice(carro.indexOf(id),1);
                 localStorage.setItem("carrito", JSON.stringify(carro));
                 
             }else{
@@ -112,7 +108,8 @@ function mas() {
                 const carro=JSON.parse(localStorage.getItem("carrito"));
                 const objeto={
                     "id":id,
-                    "nombre":myobj[i].nombre
+                    "nombre":myobj[i].nombre,
+                    "cantidad":1
                 }
                 if (carro.some(elem => elem.id == objeto.id)) {
                     console.log("este objeto ya esta añadido");
@@ -148,12 +145,12 @@ function carrito() {
 
         for (let i = 0; i < carro.length; i++) {
             carrito.innerHTML+="<li class='list-group-item d-flex justify-content-between lh-sm'>"
-                                    +"<div class='col-6'>"
-                                        +"<h6 class='my-0'>"+json[carro[i].id].nombre+"</h6>"
-                                        
+                                    +"<div class='col-6 row'>"
+                                        +"<h5 class='col-2'>"+i+". </h5>"
+                                        +"<h6 class='my-0 col'>"+json[carro[i].id].nombre.toUpperCase()+"</h6>"
                                     +"</div>"
                                     +"<button type='button' class='btn btn-danger col-1' height='5%' width='5%' onclick='restar(this)'>-</button>"
-                                    +"<div >1</div>"
+                                    +"<div >"+carro[i].cantidad+"</div>"
                                     +"<button type='button' class='btn btn-danger col-1' onclick='sumar(this)'>+</button>"
                                     +"<span class='text-muted col-3 text-end'>"+json[carro[i].id].precio+"€</span>"
                                  +"</li>";
@@ -168,16 +165,34 @@ function carrito() {
     total=0;
 }
 function sumar(num) {
+    /* se cambia en el html */
     let cantidad = Number(num.previousElementSibling.innerHTML);
     cantidad++;
     num.previousElementSibling.innerHTML=cantidad;
+
+    /* lo añadimos al localstorage */
+    const carro=JSON.parse(localStorage.getItem("carrito"));
+    let posiEnArrayCarro=Number(num.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML);
+    carro[posiEnArrayCarro].cantidad=cantidad;
+    localStorage.setItem("carrito", JSON.stringify(carro));
 }
 function restar(num) {
     let cantidad = Number(num.nextElementSibling.innerHTML);
-    if (cantidad>0) {
-        cantidad--;
+    if (cantidad<=1) {
+        /* cuando es cero o menor se elimina del localstorage */
+        const carro=JSON.parse(localStorage.getItem("carrito"));
+        let posiEnArrayCarro=Number(num.previousElementSibling.firstElementChild.innerHTML);
+        carro.splice(posiEnArrayCarro,1);
+        localStorage.setItem("carrito", JSON.stringify(carro));
+        /* se elimina del  modal*/
+        num.parentElement.remove(num.parentElement);
     }else{
-        localStorage
+        cantidad--;
+        num.nextElementSibling.innerHTML=cantidad;
+        /* lo añadimos al localstorage */
+        const carro=JSON.parse(localStorage.getItem("carrito"));
+        let posiEnArrayCarro=Number(num.previousElementSibling.firstElementChild.innerHTML);
+        carro[posiEnArrayCarro].cantidad=cantidad;
+        localStorage.setItem("carrito", JSON.stringify(carro));
     }
-    num.nextElementSibling.innerHTML=cantidad;
 }
