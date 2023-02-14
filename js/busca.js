@@ -48,7 +48,7 @@ function buscar() {
         fetch("../datos.json")
             .then (respuesta => respuesta.json())
             .then (json => mostrarBusqueda(json))
-            .then (fav => fav.mas())
+            .then (fav => fav.mas)
             .catch(e => alert(e));
     }
 
@@ -79,7 +79,7 @@ function mostrarBusqueda(json) {
                                                         +"</div>"
                                                         +"<div class='d-flex justify-content-between align-items-center card-footer '>"
                                                             +"<div class='btn-group'>"
-                                                                +"<button type='button' class='btn btn-sm btn-outline-secondary fav'><img src='../img/svg/heart.svg' alt='fav'></button>"
+                                                                +"<button type='button' class='btn btn-sm btn-outline-secondary fav'><img src='../img/svg/heart.svg' alt='fav' onclick='unomas(this)'></button>"
                                                                 
                                                             +"</div>"
                                                             +"<small class='text-muted' id='"+json[i].id+"'>"+json[i].id+"</small>"
@@ -115,20 +115,15 @@ function listaIngr(json) {
 function cerrar() {
     document.getElementById("offcanvas").className = "offcanvas offcanvas-start ";
 }
-function mas() {
-    const fav = document.getElementsByClassName("fav");
-    for (let i = 0; i < fav.length; i++) {
-        fav[i].addEventListener("click", ()=>{
-            if (fav[i].firstElementChild.src.includes("fill")) {
-                fav[i].firstElementChild.src="../img/svg/heart.svg";
+function unomas(suna) {
+            if (suna.src.includes("fill")) {
+                suna.src="../img/svg/heart.svg";
             }else{
-                fav[i].firstElementChild.src="../img/svg/heart-fill.svg";
-                mostrarNotificacion();
+                suna.src="../img/svg/heart-fill.svg";
+                mostrarNotificacion1();
             }
-        });
-    }
 }
-function mostrarNotificacion() {
+function mostrarNotificacion1() {
     if (Notification.permission == 'granted') {
         const notificacion = new Notification('Te notificamos...', { 
             icon:'../img/logo.png',
