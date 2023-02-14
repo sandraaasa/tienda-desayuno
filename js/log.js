@@ -27,6 +27,8 @@ function signin(){
         if (users.some(user=>user.email==email&&user.contra==contra)) {
             let nombre=users.find(user=>user.email==email&&user.contra==contra).nombre;
             localStorage.setItem("nombre",nombre);
+            localStorage.setItem("interruptor",true);
+
             document.getElementById("toast-body").innerHTML="Hola "+localStorage.getItem("nombre")+"!!!";
             const toast = new bootstrap.Toast(document.getElementById("liveToast"));
             toast.show();
@@ -46,28 +48,28 @@ function signin(){
 }
 function errorNoUsuario() {
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-        const wrapper = document.createElement('div')
-        wrapper.innerHTML = [
+        const err = document.createElement('div')
+        err.innerHTML = [
           `<div class="alert alert-warning alert-dismissible" role="alert">`,
           `   <div>Primero tienes que registrarte</div>`,
           '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
           '</div>'
         ].join('');
       
-        alertPlaceholder.append(wrapper);
+        alertPlaceholder.append(err);
 }
 
 function errorYaRegis() {
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-        const wrapper = document.createElement('div')
-        wrapper.innerHTML = [
+        const err = document.createElement('div')
+        err.innerHTML = [
           `<div class="alert alert-warning alert-dismissible" role="alert">`,
           `   <div>Ya estas registrado prueba a iniciar sesion</div>`,
           '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
           '</div>'
         ].join('');
       
-        alertPlaceholder.append(wrapper);
+        alertPlaceholder.append(err);
 }
 function createUser(nombre, email, contra) {
     let on =false;

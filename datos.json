@@ -145,7 +145,7 @@
         },
         {
             "id":"9",
-            "nombre":"Bol de frutas con avena",
+            "nombre":"Bol de avena",
             "precio":"2.5",
             "categoria":"bol",
             "ingredientes":[

@@ -35,23 +35,34 @@ function cargarJSON( json ) {
                                     +"<h3 class='card-header font back-texto'>"+json[i].nombre+"</h3>"
                                     
                                     +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' class='ajustar' width='100%' height='300px'>"
-                                    +"<div class='card-body'>"
-                                        +"<h5 class='card-title'>Ingredientes</h5>"
-                                        +"<div class='card-text'>"
-                                            +"<ul id='ing'>"+listaIngr(json[i])+"</ul>"
+                                    
+                                    +"<div class='card-img-overlay'>"
+                                        +"<div class='card-body'>"
+                                            +"<h5 class='card-title'>Ingredientes</h5>"
+                                            +"<div class='card-text'>"
+                                                +"<ul id='ing'>"+listaIngr(json[i])+"</ul>"
+                                            +"</div>"
                                         +"</div>"
+                                        +"<div class='d-flex justify-content-between align-items-center card-footer '>"
+                                            +"<div class='btn-group'>"
+                                                +"<button type='button' class='btn btn-sm btn-outline-secondary fav'><img src='../img/svg/heart.svg' alt='fav'></button>"
+                                                +"<button type='button' class='btn btn-sm btn-outline-secondary buy'> <img src='../img/svg/bag-plus.svg' alt='buy'></button>"
+                                            +"</div>"
+                                            +"<small class='text-muted' id='"+json[i].id+"'>"+json[i].id+"</small>"
+                                        +"</div>" 
                                     +"</div>"
-                                    +"<div class='d-flex justify-content-between align-items-center card-footer '>"
-                                        +"<div class='btn-group'>"
-                                            +"<button type='button' class='btn btn-sm btn-outline-secondary fav'><img src='../img/svg/heart.svg' alt='fav'></button>"
-                                            +"<button type='button' class='btn btn-sm btn-outline-secondary buy'> <img src='../img/svg/bag-plus.svg' alt='buy'></button>"
-                                        +"</div>"
-                                        +"<small class='text-muted' id='"+json[i].id+"'>"+json[i].id+"</small>"
-                                    +"</div>" 
                                 +"</div>"
                             +"</div>";
     }
     document.getElementById("carrito").addEventListener("click",carrito);
+    
+    const img = document.getElementsByClassName("ajustar");
+    
+    for (let i = 0; i < img.length; i++) {
+        img[i].addEventListener("click", ()=>{
+            document.getElementsByClassName("card-img-overlay")[i].display='block';
+        })
+    }
     
 }
 

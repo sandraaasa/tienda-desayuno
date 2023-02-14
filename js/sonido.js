@@ -36,3 +36,80 @@ if (!('webkitSpeechRecognition' in window)) {
         }
     }) 
 }
+document.getElementById("buscar").addEventListener("click",buscar);
+/* CARRITO */
+function buscar() {
+    let boton=document.getElementById("buscar");
+    let inputBusc=boton.previousElementSibling.firstElementChild.firstElementChild;
+    if (inputBusc.value=="") {
+        console.log("introduce el producto a mostrar");
+    } else {
+        fetch("../datos.json")
+            .then (respuesta => respuesta.json())
+            .then (json => mostrarBusqueda(json))
+            .catch(e => alert(e));
+    }
+
+}
+function mostrarBusqueda(json) {
+    let boton=document.getElementById("buscar");
+    let inputBusc=boton.previousElementSibling.firstElementChild.firstElementChild;
+    let printResult=document.getElementById("offcanvas-body");
+    //borramos tras una nueva busqueda
+    if (printResult.innerHTML!="") {
+        printResult.innerHTML="";
+    }
+    for (let i = 0; i < json.length; i++) {
+        if (json[i].nombre.toLowerCase().includes(inputBusc.value.toLowerCase())) {
+            document.getElementById("offcanvas").className += " show";
+            printResult.insertAdjacentHTML("beforeend","<div class='col'>"
+                                                    +"<div class='card shadow-sm' >"
+                                                        +"<h3 class='card-header font back-texto'>"+json[i].nombre+"</h3>"
+                                                        
+                                                        +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' class='ajustar' width='100%' height='300px'>"
+                                                        
+                                                        +"<div class='card-body'>"
+                                                            +"<h5 class='card-title'>Ingredientes</h5>"
+                                                            +"<div class='card-text'>"
+                                                                +"<ul id='ing'>"+listaIngr(json[i])+"</ul>"
+                                                            +"</div>"
+                                                        +"</div>"
+                                                        +"<div class='d-flex justify-content-between align-items-center card-footer '>"
+                                                            +"<div class='btn-group'>"
+                                                                +"<button type='button' class='btn btn-sm btn-outline-secondary fav'><img src='../img/svg/heart.svg' alt='fav'></button>"
+                                                                
+                                                            +"</div>"
+                                                            +"<small class='text-muted' id='"+json[i].id+"'>"+json[i].id+"</small>"
+                                                        +"</div>" 
+                                                    +"</div>"
+                                                  +"</div>"
+        );
+        }
+        
+    }
+}
+
+function listaIngr(json) {
+    let ing="";
+    
+    const nombres= Object.values(json.ingredientes);
+    for (let j = 0; j < json.ingredientes.length; j++) {
+        
+        if (Array.isArray(json.ingredientes[j])==true) {
+            ing+="<li>opciones <ul>";
+            for (let i = 0; i < json.ingredientes[j].length; i++) {
+                ing+="<li>"+json.ingredientes[j][i]+"</li>";
+            }
+            ing+="</ul></li>";
+        }else{
+            ing+="<li>"+json.ingredientes[j]+"</li>";
+        }
+        
+    }
+        
+    return ing;
+}
+function cerrar() {
+    document.getElementById("offcanvas").className = "offcanvas offcanvas-start ";
+}
+

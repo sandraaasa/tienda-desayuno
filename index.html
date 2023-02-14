@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <button id="buscar" class="btn animated-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" onclick="buscar(this)">
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         <img src="./img/svg/search.svg" alt="busca">
                     </button>
                 </form>
@@ -181,6 +181,18 @@
             </div>
         </div>
     </div>
+    
+    <!-- RESULTADO BUSQUEDA  -->
+    <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">Resultado de busqueda</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" onclick="cerrar()"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvas-body">
+            
+        </div>
+      </div>
+    <!-- FIN RESULTADO BUSQUEDA-->
 
     <!-- CUERPO -->
 

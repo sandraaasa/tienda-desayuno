@@ -39,6 +39,13 @@
     transform: scale(0.9);
 }
 
+/* carta de productos */
+.card-img-overlay{
+    background-color: #7c4272d7;
+    display: none;
+}
+
+/* imagenes de productos */
 .ajustar{
     object-fit: cover;
 }
@@ -51,7 +58,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-30px);
+      transform: translateY(-10px);
       opacity: 0.5;
     }
     100% {
