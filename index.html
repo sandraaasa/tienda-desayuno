@@ -66,7 +66,7 @@
                             </button>
                         </div>
                     </div>
-                    <button id="buscar" class="btn animated-button" type="button" data-bs-toggle="collapse"
+                    <button id="buscar" class="btn botonesAnimados" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         <img src="./img/svg/search.svg" alt="busca">
                     </button>
@@ -74,11 +74,11 @@
 
                 <!-- BOTON INICIO SESION -->
                 <div class="btn-group ">
-                    <button id="inises" type="button" class="btn animated-button" data-bs-toggle="modal"
+                    <button id="inises" type="button" class="btn botonesAnimados" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
                         <img src="./img/svg/person.svg" alt="inicioSes">
                     </button>
-                    <button type="button" class="btn animated-button dropdown-toggle dropdown-toggle-split"
+                    <button type="button" class="btn botonesAnimados dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
@@ -98,7 +98,7 @@
                 </div>
 
                 <!-- BOTON COMPRA -->
-                <button class="btn animated-button" type="button" data-bs-target="#exampleModalToggle"
+                <button class="btn botonesAnimados" type="button" data-bs-target="#exampleModalToggle"
                     data-bs-toggle="modal" id="carrito">
                     <img src="./img/svg/cart.svg" alt="compra">
                 </button>
@@ -106,7 +106,7 @@
 
                 <!-- BOTON PRODUCTOS -->
                 <a aria-current="page" href="./html/productos.html">
-                    <button type="button" class="btn animated-button">Productos</button>
+                    <button type="button" class="btn botonesAnimados">Productos</button>
                 </a>
 
             </div>
@@ -316,46 +316,63 @@
 
 <!-- FINAL CUERPO -->
 
-        <!-- FOOTER -->
-        <footer class="container py-5">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
-                        viewBox="0 0 24 24">
-                        <title>Product</title>
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path
-                            d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
-                        </path>
-                    </svg>
-                    <small class="d-block mb-3 text-muted">© 2017 2022</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="link-secondary" href="#">Nombre de la empresa</a></li>
-                        <li><a class="link-secondary" href="#">Contacto</a></li>
-                        <li><a class="link-secondary" href="#">Privacidad del sitio</a></li>
-                        <li><a class="link-secondary" href="#">Condiciones de uso</a></li>
-                        <li><a class="link-secondary" href="#">Condiciones de venta</a></li>
-                    </ul>
+<!--//BLOQUE COOKIES-->
+<div class="alert alert-warning cookie-box" style="display: block;" role="alert">
+    <h4 class="alert-heading">¡Bienvenido!</h4>
+    <p>Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real 
+        Decreto-ley 13/2012.</p>
+    <hr>
+    <p class="mb-0">Si continúa navegando consideramos que acepta el uso de cookies.</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn botonesAnimados me-md-2"><a href="http://politicadecookies.com" target="_blank" class="alert-link" >Más información</a></button>
+        <button class="btn botonesAnimados" onclick="aceptarCookies()"><b>OK</b></button>
+    </div>
+    
+</div>
+<!--//FIN BLOQUE COOKIES-->
+
+<!-- FOOTER -->
+<footer class="container py-5">
+    <div class="row">
+        <div class="col-12 col-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+                viewBox="0 0 24 24">
+                <title>Product</title>
+                <circle cx="12" cy="12" r="10"></circle>
+                <path
+                    d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
+                </path>
+            </svg>
+            <small class="d-block mb-3 text-muted">© 2017 2023</small>
+        </div>
+        
+
+        <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Nombre de la empresa</a></li>
+                <li><a class="link-secondary" href="#">Contacto</a></li>
+                <li><a class="link-secondary" href="#">Privacidad del sitio</a></li>
+                <li><a class="link-secondary" href="#">Condiciones de uso</a></li>
+                <li><a class="link-secondary" href="#">Condiciones de venta</a></li>
+            </ul>
 
 
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="link-secondary" href="#">Business</a></li>
-                        <li><a class="link-secondary" href="#">Education</a></li>
-                        <li><a class="link-secondary" href="#">Government</a></li>
-                        <li><a class="link-secondary" href="#">Gaming</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md" id="map">
-                </div>
-            </div>
-        </footer>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Business</a></li>
+                <li><a class="link-secondary" href="#">Education</a></li>
+                <li><a class="link-secondary" href="#">Government</a></li>
+                <li><a class="link-secondary" href="#">Gaming</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md" id="map">
+        </div>
+    </div>
+</footer>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
             integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

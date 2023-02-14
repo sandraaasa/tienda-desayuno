@@ -103,32 +103,46 @@ function mas() {
     for (let i = 0; i < buy.length; i++) {
         buy[i].addEventListener("click", ()=>{
             let id=document.getElementById(i).innerHTML;
-            if (buy[i].firstElementChild.src.includes("fill")) {
-                // icono desactivado
-                buy[i].firstElementChild.src="../img/svg/bag-plus.svg";
-                //carrito eliminar
-                const carro=JSON.parse(localStorage.getItem("carrito"));
-                carro.splice(carro.indexOf(id),1);
-                localStorage.setItem("carrito", JSON.stringify(carro));
-                
-            }else{
-                // icono activado
-                buy[i].firstElementChild.src="../img/svg/bag-plus-fill.svg";
-                
-                // carrito añadir
-                const carro=JSON.parse(localStorage.getItem("carrito"));
-                const objeto={
-                    "id":id,
-                    "nombre":myobj[i].nombre,
-                    "cantidad":1
+                if (localStorage.getItem("interruptor")==true) {
+                    if (buy[i].firstElementChild.src.includes("fill")) {
+                        // icono desactivado
+                        buy[i].firstElementChild.src="../img/svg/bag-plus.svg";
+                        //carrito eliminar
+                        const carro=JSON.parse(localStorage.getItem("carrito"));
+                        carro.splice(carro.indexOf(id),1);
+                        localStorage.setItem("carrito", JSON.stringify(carro));
+                        
+                    }else{
+    
+                        // icono activado
+                        buy[i].firstElementChild.src="../img/svg/bag-plus-fill.svg";
+                        
+                        // carrito añadir
+                        const carro=JSON.parse(localStorage.getItem("carrito"));
+                        const objeto={
+                            "id":id,
+                            "nombre":myobj[i].nombre,
+                            "cantidad":1
+                        }
+                        if (carro.some(elem => elem.id == objeto.id)) {
+                            console.log("este objeto ya esta añadido");
+                        }else{
+                            carro.push(objeto);
+                        }
+                        localStorage.setItem("carrito", JSON.stringify(carro));
+                    }
+                } else {
+                    if (Notification.permission == 'granted') {
+                        const notificacion = new Notification('Te notificamos...', { 
+                            icon:'../img/logo.png',
+                            body: "REGISTRATE"
+                        });
+                        notificacion.onclick = function() {
+                            window.open('/html/regi.html')
+                        }
+                    }
                 }
-                if (carro.some(elem => elem.id == objeto.id)) {
-                    console.log("este objeto ya esta añadido");
-                }else{
-                    carro.push(objeto);
-                }
-                localStorage.setItem("carrito", JSON.stringify(carro));
-            }
+                
         });
     }
 }

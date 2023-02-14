@@ -1,3 +1,25 @@
+window.addEventListener("load",()=>{
+    setTimeout(function(){
+        document.querySelector('.cookie-box').classList.add('show');
+    }, 2000);
+});
+// cookies
+function aceptarCookies() {
+    setCookie("cookieTienda","max-age=604800");
+    document.querySelector('.cookie-box').classList.remove('show');
+
+    function setCookie(c_name,exdays){
+        // dia de hoy
+        let fechActual= new Date();
+        let fechActualFormat=fechActual.getUTCDate()+"/"+fechActual.getUTCMonth()+"/"+fechActual.getFullYear();
+        // creacion de cookie
+        document.cookie=c_name + "=" + fechActualFormat+";"+exdays;
+    }
+    
+    document.querySelector('.cookie-box').classList.remove('show');
+}
+
+//registrarse
 function signup() {
     if (localStorage.getItem("users")==null) {
         localStorage.setItem("users","[]");
@@ -11,10 +33,14 @@ function signup() {
 
     if (createUser(nombre,email,contra)) {
         window.location.href="/";
+        
+        localStorage.setItem("interruptor",true);
     }
     
     
 }
+
+// iniciar sesion
 function signin(){
 
     let email = document.getElementById("floatingInput").value;
@@ -46,6 +72,8 @@ function signin(){
 
 
 }
+
+// errores
 function errorNoUsuario() {
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
         const err = document.createElement('div')
@@ -71,6 +99,8 @@ function errorYaRegis() {
       
         alertPlaceholder.append(err);
 }
+
+// creacion de usuarios
 function createUser(nombre, email, contra) {
     let on =false;
     const newUser = {
@@ -86,6 +116,7 @@ function createUser(nombre, email, contra) {
         users.push(newUser);
         localStorage.setItem("users", JSON.stringify(users));
         localStorage.setItem("nombre",nombre);
+        localStorage.setItem("interruptor",true);
         on=true;
     }
     return on;

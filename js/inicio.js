@@ -2,7 +2,7 @@ window.onload=function () {
 //creamos el usuario predefinido
     if (localStorage.getItem("users")==null) {
         localStorage.setItem("users","[]");
-        let [ nombre, email, contra] = ["nombre", "nombre@nombre.com", "1234"];
+        let [ nombre, email, contra] = ["nombre", "nombre@nombre.com", "Contra02"];
         createUser(nombre,email,contra);
         localStorage.setItem("interruptor",false);
     }

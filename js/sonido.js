@@ -60,13 +60,14 @@ function mostrarBusqueda(json) {
         printResult.innerHTML="";
     }
     for (let i = 0; i < json.length; i++) {
-        if (json[i].nombre.toLowerCase().includes(inputBusc.value.toLowerCase())) {
+        if (json[i].nombre.toLowerCase().includes(inputBusc.value.toLowerCase())
+            ||json[i].precio.toLowerCase().includes(inputBusc.value.toLowerCase())
+            ||json[i].categoria.toLowerCase().includes(inputBusc.value.toLowerCase())) {
             document.getElementById("offcanvas").className += " show";
             printResult.insertAdjacentHTML("beforeend","<div class='col'>"
                                                     +"<div class='card shadow-sm' >"
                                                         +"<h3 class='card-header font back-texto'>"+json[i].nombre+"</h3>"
-                                                        
-                                                        +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' class='ajustar' width='100%' height='300px'>"
+                                                        +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' class='ajustar' width='50%'>"
                                                         
                                                         +"<div class='card-body'>"
                                                             +"<h5 class='card-title'>Ingredientes</h5>"
@@ -112,4 +113,28 @@ function listaIngr(json) {
 function cerrar() {
     document.getElementById("offcanvas").className = "offcanvas offcanvas-start ";
 }
+function mas() {
+    const fav = document.getElementsByClassName("fav");
+    for (let i = 0; i < fav.length; i++) {
+        fav[i].addEventListener("click", ()=>{
+            if (fav[i].firstElementChild.src.includes("fill")) {
+                fav[i].firstElementChild.src="../img/svg/heart.svg";
+            }else{
+                fav[i].firstElementChild.src="../img/svg/heart-fill.svg";
+                mostrarNotificacion();
+            }
+        });
+    }
+}
+function mostrarNotificacion() {
+    if (Notification.permission == 'granted') {
+        const notificacion = new Notification('Te notificamos...', { 
+            icon:'../img/logo.png',
+            body: "Le has dado like. "
+        });
+        notificacion.onclick = function() {
+            window.open('/')
+        }
+    }
+} 
 
