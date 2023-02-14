@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title> ut5pr2-ej4DiplomaHTML5.html</title>
+	<script>
+    	window.addEventListener("load", iniciar)
+    	function iniciar()
+    	{
+			document.getElementById("formulario").style.display = "block";
+			document.getElementById("diploma").style.display = "none";
+			document.getElementById("formulario").addEventListener("submit", (e) => {
+    			e.preventDefault();
+				enviar();   } ); 
+
+	    	}
+
+		function MostrarOcultarCondiciones(){
+			var elemento = document.getElementById('condiciones');
+			var enl = document.getElementById('enlace');
+			if (elemento.style.display ==="" || elemento.style.display === "block") {
+				elemento.style.display = "none";
+                enl.innerHTML = "Ver Condiciones...";
+			}
+			else
+			{
+				enl.innerHTML = "Ocultar Condiciones...";
+				elemento.style.display = "block";
+			}
+		}
+		
+
+		function enviar(e) {
+				var titulo = "";
+			if (document.getElementById('aceptar').checked) {
+                 
+			    var alu =document.getElementById('alumno').value;
+
+			    var calificacion = document.getElementById('calificacion').value;
+			    
+   			    document.getElementById("diplomanombre").innerHTML = (document.getElementById('nombre').value).toUpperCase();
+    	        document.getElementById("diplomatitulo").innerHTML = document.getElementById('titulo').value;
+        	    document.getElementById("diplomanota"). innerHTML = document.getElementById("diplomanota"). innerHTML + calificacion;
+				document.getElementById("diploma").style.backgroundColor = document.getElementById("color").value;
+				
+				var fecha = "<br> Fecha de realizacion: " + document.getElementById("fecha").value + "<br>"; //formato fecha yyyy/mm/dd
+				var correo = "Correo electrónico: " + document.getElementById('email').value + "<br>";
+			    var valoracion = "Valoración del curso: " + document.getElementById('valoracion').value + "<br>";
+			    document.getElementById("datosalumno"). innerHTML += fecha + correo + valoracion;
+				// si queremos que la fecha tenga formato dd/mm/yyyy ---- 
+				//= document.getElementById("diplomafecha").innerHTML + document.getElementById("fecha").value.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
+				if (alu === "NO") {
+  			      document.getElementById("diplomaesalumno"). innerHTML = "NO ES ALUMNO DEL CENTRO";
+				} 
+				else {
+  			      document.getElementById("diplomaesalumno"). innerHTML = "ES ALUMNO DEL CENTRO";
+
+				}
+				document.getElementById("formulario").style.display = "none";
+				document.getElementById("diploma").style.display = "block";
+                }	
+            else
+            	{ alert ("No se imprimirá diploma");}
+		} 		
+	
+	</script>
+</head>
+<body>
+	<form id="formulario">
+		  <label>Nombre y Apellidos*: </label>
+		  <input type="text" name= "nombre" id="nombre" required title="Introduce Nombre y dos apellidos" /><br/><br/>
+          
+          <label>Título de la actividad*: </label><br/>
+		  <textarea rows="6" cols="40" id="titulo" maxlength = "200" placeholder="Indica el texto que aparecerá en el diploma..."  required title="Texto del diploma. Máximo 200 letras"/> </textarea><br/> <br/>
+		  
+		  <label>Contraseña*: </label>
+		  <input type="password" id="password" pattern="palomeras" required><br/><br/>
+		  
+		  <label>Color de Fondo: </label>
+		  <input type="color" id="color" value="#FFFFFF" /><br/><br/>
+		  
+		  <label>Fecha del diploma*: </label>
+		  <input type="date" id="fecha" required><br/><br/>
+	  	  
+	  	  <label>Calificacion de la actividad: </label>
+		  <input type="number" id="calificacion" min="0" max="10"><br/><br/>
+          
+          <label>¿Eres alumno del centro?: </label>
+		  
+		  <input type="radio" id="alumno" value="SI" />SI
+		  <input type="radio" id="alumno" value="NO" />NO<br/><br/>
+	 
+	 	  <label>Correo electrónico: </label>
+		  <input type="email" id="email"/><br/><br/>
+     
+          <label>Valoración del curso: </label>
+		 0<input type="range" id="valoracion" min="0" max="10">10<br/><br/>
+     
+  		  <input type="checkbox" id="aceptar" />
+  		  <label>Aceptas las condiciones del diploma? </label>
+		  </br><i><a href="#" id="enlace" onclick="MostrarOcultarCondiciones()">Ver Condiciones</a> </i>
+		  <p id= "condiciones" style="display: none"> Estas son las condiciones del diploma que son unas condiciones estupendas..... </p>
+	  <br> <br>
+	  <input id="enviar" type="submit" value="Enviar " />
+		</form>
+  <div id="diploma">
+	<H3> IES PALOMERAS VALLECAS </H3>
+	<P> entrega este diploma a... <P>
+	<h1 id= "diplomanombre"> </h1>
+	<p > por su participación en.. </p>
+	<h2 id="diplomatitulo"> </h2>
+	<p id="diplomanota"> con una calificación de </p>
+	<p id="diplomaesalumno"> </p>
+	<p id ="datosalumno">INFORMACIÓN ADICIONAL DEL ALUMNO/A </p>
+	
+  </div>
+</body>
+</html>

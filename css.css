@@ -38,9 +38,17 @@
 }
 
 /* carta de productos */
-.card-img-overlay{
-    background-color: #7c4272d7;
-    display: none;
+.overlay{
+    display: block;
+    position: relative;
+}
+.money{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 3%;
+    border-radius: 7px;
+    background-color: #b47dab;
 }
 
 /* imagenes de productos */

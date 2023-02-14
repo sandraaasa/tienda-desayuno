@@ -3,7 +3,7 @@ window.addEventListener("load",()=>{
         document.querySelector('.cookie-box').classList.add('show');
     }, 2000);
 });
-// cookies
+/* COOKIES */
 function aceptarCookies() {
     setCookie("cookieTienda","max-age=604800");
     document.querySelector('.cookie-box').classList.remove('show');
@@ -19,7 +19,7 @@ function aceptarCookies() {
     document.querySelector('.cookie-box').classList.remove('show');
 }
 
-//registrarse
+/* REGISTRARSE */
 function signup() {
     if (localStorage.getItem("users")==null) {
         localStorage.setItem("users","[]");
@@ -30,17 +30,61 @@ function signup() {
     let contra=document.getElementById("floatingInputPassword").value;
     
     // almacenamos el usuario en un array con los demas usuarios
-
-    if (createUser(nombre,email,contra)) {
-        window.location.href="/";
-        
-        localStorage.setItem("interruptor",true);
+    if (validar()) {
+        if (createUser(nombre,email,contra)) {
+            window.location.href="/";
+            localStorage.setItem("interruptor",true);
+        }
+    }else{
+        console.log("no se ha podido realizar bien el registro");
     }
     
     
 }
+/* VALIDACION */
+function validar() { 
+    let on1 = false;
+    let on2 = false;
+    let on3 = false;
+    let on4 = false;
+    // misma contraseña
+    let contra = document.getElementById("floatingInputPassword").value;
+    if (contra === document.getElementById("floatingInputREpitPassword").value) {
+        console.log("La contraseña es la misma");
+        on1=true;
+    } else {
+        errorContraNIgual();
+    }
 
-// iniciar sesion
+    // contraseña valida
+    let validap = /^[a-zA-Z0-9_@]+$/;
+    if (validap.test(contra)) {
+        console.log("La contraseña es valida");
+        on2=true;
+    } else {
+        errorPass();
+    }
+    // nombre valido
+    let nombre = document.getElementById("floatingInputPassword").value;
+    let validan = /^[a-zA-Z0-9]+$/;
+    if (validan.test(nombre)) {
+        on3=true;
+    } else {
+        errorNombre();
+    }
+
+    // email valido
+    let email = document.getElementById("floatingInputEmail").value;
+    var validare = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (validare.test(email)) {
+        on4=true;
+    } else {
+        errorEmail();
+    }
+
+}
+
+/* INICIO SESION */
 function signin(){
 
     let email = document.getElementById("floatingInput").value;
@@ -66,14 +110,10 @@ function signin(){
         }else{
             errorNoUsuario();
         }
-        
     }
-    
-
-
 }
 
-// errores
+/* ERRORES */
 function errorNoUsuario() {
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
         const err = document.createElement('div')
@@ -100,7 +140,57 @@ function errorYaRegis() {
         alertPlaceholder.append(err);
 }
 
-// creacion de usuarios
+function errorContraNIgual() {
+    const alertPlaceholder = document.getElementById('AlertPlacecontra')
+        const err = document.createElement('div')
+        err.innerHTML = [
+          `<div class="alert alert-warning alert-dismissible" role="alert">`,
+          `   <div>La contraseña no es la misma</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('');
+      
+        alertPlaceholder.append(err);
+}
+
+function errorPass() {
+    const alertPlaceholder = document.getElementById('AlertPlacenombre')
+        const err = document.createElement('div')
+        err.innerHTML = [
+          `<div class="alert alert-warning alert-dismissible" role="alert">`,
+          `   <div>La contraseña debe incluir mayúsculas, minúsculas y números</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('');
+      
+        alertPlaceholder.append(err);
+}
+function errorNombre() {
+    const alertPlaceholder = document.getElementById('AlertPlacenombre')
+        const err = document.createElement('div')
+        err.innerHTML = [
+          `<div class="alert alert-warning alert-dismissible" role="alert">`,
+          `   <div>El nombre no es correcto introduce solo numeros y letras</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('');
+      
+        alertPlaceholder.append(err);
+}
+function errorEmail() {
+    const alertPlaceholder = document.getElementById('AlertPlacenombre')
+        const err = document.createElement('div')
+        err.innerHTML = [
+          `<div class="alert alert-warning alert-dismissible" role="alert">`,
+          `   <div>El email no es correcto introduce.<br> Formato: nombre123@nombre.com</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('');
+      
+        alertPlaceholder.append(err);
+}
+
+/* CREACION DE USUARIOS */
 function createUser(nombre, email, contra) {
     let on =false;
     const newUser = {

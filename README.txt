@@ -10,9 +10,9 @@ LOGUEO Y REGISTRO
                         => email: nombre@nombre.com
                         => contraseña: Contra02
     ·Para agregar cosas al carrito hay que loguearse obligatoriamente (por eso esta el usuario por defecto)
-    .Expresiones regulares  =>Para el nombre de usuario solo acepta letras y números. No acepta espacios en blanco
+    .Expresiones regulares  =>Para el nombre de usuario solo acepta letras y números.
                             =>Para el email palabraConNumeros@palabra.ltras
-                            =>Para la contraseña se acepta letras numeros y @ o _
+                            =>Para la contraseña se acepta letras, numeros y @ o _
     
 COOKIES
     ·en las cookies almaceno el dia en que se entra en la página

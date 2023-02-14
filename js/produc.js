@@ -24,7 +24,7 @@ window.onload=  function cargar() {
 
 
 }
-
+/* CARGAR PRODUCTOS */
 function cargarJSON( json ) {
     let content = document.getElementById("contenedor");
     myobj=json;
@@ -36,7 +36,10 @@ function cargarJSON( json ) {
                                     
                                     +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' class='ajustar' width='100%' height='300px'>"
                                     
-                                    +"<div class='card-img-overlay'>"
+                                    +"<div class='overlay'>"
+                                            +"<small class='money'>"+json[i].precio+" €</small>"
+                                    +"</div>"
+
                                         +"<div class='card-body'>"
                                             +"<h5 class='card-title'>Ingredientes</h5>"
                                             +"<div class='card-text'>"
@@ -50,7 +53,6 @@ function cargarJSON( json ) {
                                             +"</div>"
                                             +"<small class='text-muted' id='"+json[i].id+"'>"+json[i].id+"</small>"
                                         +"</div>" 
-                                    +"</div>"
                                 +"</div>"
                             +"</div>";
     }
@@ -86,6 +88,7 @@ function listaIngr(json) {
         
     return ing;
 }
+/* BOTONES DE ME GUSTA Y AÑADIR CARRITO */
 function mas() {
     const fav = document.getElementsByClassName("fav");
     for (let i = 0; i < fav.length; i++) {
@@ -135,7 +138,7 @@ function mas() {
                     if (Notification.permission == 'granted') {
                         const notificacion = new Notification('Te notificamos...', { 
                             icon:'../img/logo.png',
-                            body: "REGISTRATE"
+                            body: "INICIA SESION "
                         });
                         notificacion.onclick = function() {
                             window.open('/html/regi.html')
@@ -146,7 +149,7 @@ function mas() {
         });
     }
 }
-
+/* NOTIFICACION LIKE */
 function mostrarNotificacion() {
     if (Notification.permission == 'granted') {
         const notificacion = new Notification('Te notificamos...', { 
@@ -158,6 +161,8 @@ function mostrarNotificacion() {
         }
     }
 } 
+
+/* CARGAR CARRITO */
 function carrito() {
     json=myobj;
     let carrito=document.getElementById("compra");
@@ -169,6 +174,7 @@ function carrito() {
         const carro=JSON.parse(localStorage.getItem("carrito"));
 
         for (let i = 0; i < carro.length; i++) {
+            let cost=Number(json[carro[i].id].precio)* Number(carro[i].cantidad);
             carrito.innerHTML+="<li class='list-group-item d-flex justify-content-between lh-sm'>"
                                     +"<div class='col-6 row'>"
                                         +"<h5 class='col-2'>"+i+". </h5>"
@@ -177,9 +183,9 @@ function carrito() {
                                     +"<button type='button' class='btn btn-danger col-1' height='5%' width='5%' onclick='restar(this)'>-</button>"
                                     +"<div >"+carro[i].cantidad+"</div>"
                                     +"<button type='button' class='btn btn-danger col-1' onclick='sumar(this)'>+</button>"
-                                    +"<span class='text-muted col-3 text-end'>"+json[carro[i].id].precio+"€</span>"
+                                    +"<span class='text-muted col-3 text-end'>"+cost+"€</span>"
                                  +"</li>";
-            total=total+Number(json[carro[i].id].precio);
+            total=total+cost;
         }
 
     }
@@ -189,6 +195,8 @@ function carrito() {
                                             +"</li>");
     total=0;
 }
+
+
 function sumar(num) {
     /* se cambia en el html */
     let cantidad = Number(num.previousElementSibling.innerHTML);

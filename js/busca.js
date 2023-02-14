@@ -1,3 +1,4 @@
+/* SPEECH */
 var recognition;
 let micro = document.getElementById("buscarmic");
 let inputSearch = document.getElementById("busqueda");
@@ -47,6 +48,7 @@ function buscar() {
         fetch("../datos.json")
             .then (respuesta => respuesta.json())
             .then (json => mostrarBusqueda(json))
+            .then (fav => fav.mas())
             .catch(e => alert(e));
     }
 
@@ -67,7 +69,7 @@ function mostrarBusqueda(json) {
             printResult.insertAdjacentHTML("beforeend","<div class='col'>"
                                                     +"<div class='card shadow-sm' >"
                                                         +"<h3 class='card-header font back-texto'>"+json[i].nombre+"</h3>"
-                                                        +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' class='ajustar' width='50%'>"
+                                                        +"<img src='../"+json[i].img+"' alt='"+json[i].id+"' class='ajustar' width='100%'>"
                                                         
                                                         +"<div class='card-body'>"
                                                             +"<h5 class='card-title'>Ingredientes</h5>"
