@@ -5,7 +5,7 @@ y el arbol de directorios es el siguiente
 
     ]
 
-LOGUEO Y REGISTRO
+LOG IN Y REGISTRO
     ·Usuario por defecto=> nombre: nombre
                         => email: nombre@nombre.com
                         => contraseña: Contra02
