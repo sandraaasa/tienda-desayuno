@@ -1,9 +1,5 @@
 # tienda-desayuno
 El fichero de inicio de escaparate es el index.html
-y el arbol de directorios es el siguiente
-    [
-
-    ]
 
 LOG IN Y REGISTRO
     ·Usuario por defecto=> nombre: nombre
